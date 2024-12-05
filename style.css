@@ -1,0 +1,35 @@
+#menu {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+#menu-font {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}  
+
+#menu-box{
+    width: 600px;
+    background-color: rgb(97, 93, 93);
+    color: white;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.8em
+}
+body {
+    background-color: rgb(52, 150, 126);
+}
+#mfood {
+    align-items: center;
+    justify-content: center;
+}
+button:hover {
+    background-color: rgb(76, 63, 52);
+    cursor: pointer;
+}
+#karlstad {
+    gap: 0.5em;
+}
