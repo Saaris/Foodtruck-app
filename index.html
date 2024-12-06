@@ -8,62 +8,70 @@
     <link rel="stylesheet" href="style.css"
 </head>
 <body>
+    <!-- menydelen -->
     <section id="menu-font">
     <h1>Meny</h1>
         <span class="material-symbols-outlined">shopping_bag</span>
     </section>
 
     <section id="food">
-        <button id="menu-box">
-            <p class="karlstad">KARLSTAD......9SEK</p>
-            <p class="karlstad-ingredient">kantarell, shcarlottenlök, morot, bladpersilja</p>
+        <button id="menu-karlstad" class="menu-box">
+            <p id="karlstad-price" class="show-price">KARLSTAD...............................9SEK</p>
+            <p id="karlstad-ingredient" class="ingredient">kantarell, shcarlottenlök, morot, bladpersilja</p>
         </button>
 
-        <button id="menu-box">
-            <p class="bangkok">BANGKOK.....9SEK</p>
-            <p class="bangkok-ingredient">morot, salladslök, chili, kokos, lime, koriander</p>
+        <button id="menu-bangkok" class="menu-box" >
+            <p id="bangkok-price" class="show-price">BANGKOK..................................9SEK</p>
+            <p id="bangkok-ingredient" class="ingredient">morot, salladslök, chili, kokos, lime, koriander</p>
         </button>
 
-        <button id="menu-box">
-            <p class="hochiminh">HI CHI MINH......9SEK"</p>
-            <p class="hochiminh-ingredient">kål, salladslök, chili, vitlök, ingefära, tofu</p>
+        <button id="menu-hochiminh" class="menu-box">
+            <p id="hochiminh-price" class="show-price">HI CHI MINH.............................9SEK"</p>
+            <p id="hochiminh-ingredient" class="ingredient">kål, salladslök, chili, vitlök, ingefära, tofu</p>
         </button>
             
-        <button id="menu-box">
-            <p class="paris">PARIS......9SEK"</p>
-            <p class="paris-ingredient">kål, chevré, honung, basilika, valnötspasta</p>
+        <button id="menu-paris" class="menu-box">
+            <p id="paris-price"class="show-price">PARIS.........................................9SEK"</p>
+            <p id="paris-ingredient" class="ingredient">kål, chevré, honung, basilika, valnötspasta</p>
         </button>
        
-        <button id="menu-box">
-            <p class="oaxaca">OAXACA......9SEK"</p>
-            <p class="oaxaca-ingredient">majs, tomat, rostade ärtor, vitlök, majs</p>
+        <button id="menu-oaxaca" class="menu-box">
+            <p id="oaxaca-price" class="show-price">OAXACA......................................9SEK"</p>
+            <p id="oaxaca-ingredient" class="ingredient">majs, tomat, rostade ärtor, vitlök, majs</p>
         </button>
-    </section>
 
-    <button id="menu-box">
-        <p class="sauce">DIPSÅS......19SEK</p>
-        <div>sweet chili</div>
-        <div>wonton std</div>
-        <div>sweet & sour</div>
-        <div>hot mango</div>
-        <div>chili mayo</div>
-        <div>guacamole</div>
-    </button>
+        <section id="sauce-drink">
+        <div id="sauce-container" class="menu-box">
+            <p class="sauce">DIPSÅS......19SEK</p>
+            <div class="sauce-section">
+                <button>sweet chili</button>
+                <button>wonton std</button>
+                <button>sweet & sour</button>
+                <button>hot mango</button>
+                <button>chili mayo</button>
+                <button>guacamole</button>
+            </div>
+        </div>
             
-    <button id="menu-box">
-        <p class="drink">DRICKA......19SEK</p>
-        <div>fanta orange</div>
-        <div>fanta exotic</div>
-        <div>coca cola</div>
-        <div>sprite</div>
-        <div>loka granatäpple</div>
-        <div>loka citrus</div>
-    </button>
-    
+        <div id="drink-container" class="menu-box">
+            <p class="drink">DRICKA......19SEK</p>
+            <div class="drink-section">
+                <button>Fanta orange</button>
+                <button>Fanta exotic</button>
+                <button>Coca cola</button>
+                <button>Sprite</button>
+                <button>Loka granatäpple</button>
+                <button>Loka citrus</button>
+            </div>
+        </div>
+    </section>
+</section>
+
+    <!-- orderdelen -->
     <section id="order">
         <span class="material-symbols-outlined">shopping_bag</span>
         <div id="order-section">
-            <h2><span class="price-karlstad">SEK</span></h2>
+            <h2><span class="price-karlstad">...........SEK</span></h2>
             <div id="order-karlstad" class="order-city">
                 <button id="add-karlstad" class="order-button">+</button>
                 <p id="total-karlstad">0</p>
@@ -72,49 +80,50 @@
         </div>
 
         <div id="order-section">
-            <h2><span class="price-bangkok">SEK</span></h2>
+            <h2><span class="price-bangkok">...........SEK</span></h2>
             <div id="order-bangkok" class="order-city">
-                <button id="add-bangkok">+</button>
+                <button id="add-bangkok" class="order-button">+</button>
                 <p id="total-bangkok">0</p>
-                <button id="remove-bangkok">-</button>
+                <button id="remove-bangkok" class="order-button">-</button>
             </div>
         </div>
 
         <div id="order-section">
-            <h2><span class="price-hochiminh">SEK</span></h2>
+            <h2><span class="price-hochiminh">...........SEK</span></h2>
             <div id="order-hochiminh" class="order-city">
-                <button id="add-hochiminh">+</button>
+                <button id="add-hochiminh" class="order-button">+</button>
                 <p id="total-hochiminh">0</p>
-                <button id="remove-hochiminh">-</button>
+                <button id="remove-hochiminh" class="order-button">-</button>
             </div>
         </div>
 
         <div id="order-section">
-            <h2><span class="price-paris">SEK</span></h2>
+            <h2><span class="price-paris">...........SEK</span></h2>
             <div id="order-paris" class="order-city">
-                <button id="add-paris">+</button>
+                <button id="add-paris" class="order-button">+</button>
                 <p id="total-paris">0</p>
-                <button id="remove-paris">-</button>
+                <button id="remove-paris" class="order-button">-</button>
             </div>
         </div>
 
         <div id="order-section">
-            <h2><span class="price-oaxaca">SEK</span></h2>
+            <h2><span class="price-oaxaca">...........SEK</span></h2>
             <div id="order-oaxaca" class="order-city">
-                <button id="add-oaxaca">+</button>
+                <button id="add-oaxaca" class="order-button">+</button>
                 <p id="total-oaxaca">0</p>
-                <button id="remove-oaxaca">-</button>
+                <button id="remove-oaxaca" class="order-button">-</button>
             </div>
         </div>
-
-        <div class="total-section">
-            <p id="total">Totalt</p>
-            <p id="moms">Inklusive 20% moms</p>
-        </div>
-        
-        <button id="pay">Take my money!</button>
-        
+        <section class="total-pay"></section>
+            <div class="total-section">
+                <p id="total">Totalt</p>
+                <p id="moms">Inklusive 20% moms</p>
+            </div>
+            <button id="pay">Take my money!</button>
+        </section>
     </section>
+
+    <!-- kvittodelen -->
     <section id="receit"></section>
     <img>
     </section>

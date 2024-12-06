@@ -9,18 +9,20 @@
     justify-content: space-between;
 }  
 
-#menu-box{
-    width: 600px;
+.menu-box{
+    width: 90%;
     background-color: rgb(97, 93, 93);
     color: white;
     font-size: 18px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 0.8em
+    padding: 0.8em;
+    border-radius: 10px;
+    border: 1px dashed grey;
 }
 
-#menu-box:hover{
+.menu-box:hover{
     background-color: rgb(76, 63, 52);
     cursor: pointer;
 
@@ -28,14 +30,12 @@
 body {
     background-color: rgb(52, 150, 126);
 }
-#mfood {
+#food {
     align-items: center;
     justify-content: center;
+    width: 100%;
 
-}
 
-#karlstad {
-    gap: 0.5em;
 }
 .material-symbols-outlined {
     background-color: rgb(205, 202, 202);
@@ -61,4 +61,48 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-  }
+    gap: 2em;
+
+}
+.total-section {
+    background-color: rgb(213, 214, 215);
+    width: 350px;
+}
+.show-price {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 20px;
+}
+.ingredient {
+    font-size: 16px;
+}
+#sauce-button.menu-box {
+    display: flex;
+
+}
+.sauce-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 10px; 
+}
+#sauce-container{
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+    border-radius: 10px;
+}
+
+#drink-container{
+    margin-top: 0.5em;
+    border-radius: 10px;
+}
+.drink-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 10px; 
+}
+.sauce-drink {
+    gap: 1em;
+}
