@@ -1,6 +1,3 @@
-// GET = hämtar någonting, POST = vi skickar med någonting
-// POST (då behöver vi skicka med en body)
-
 
 // const url = 'https://fdnzawlcf6.execute-api.eu-north-1.amazonaws.com';
 
@@ -105,14 +102,14 @@
 
 //'yum-PxtRFopRoKZwir25'
 
-const url = 'https://fdnzawlcf6.execute-api.eu-north-1.amazonaws.com/keys'
+const keyUrl = 'https://fdnzawlcf6.execute-api.eu-north-1.amazonaws.com/keys'
     const bodyToSend = {
-    name: 'x-zocom'
+    name: 'Saaris'
 }
     const options = {
     method: 'POST',
     headers: {
-        "Content-Type": 'application/json',  // vi skickar JSON i body
+        "Content-Type": 'application/json',  
 
     },
 
@@ -120,7 +117,7 @@ const url = 'https://fdnzawlcf6.execute-api.eu-north-1.amazonaws.com/keys'
 }
 
     try {
-    const response = await fetch(url,options)
+    const response = await fetch(keyUrl,options)
         console.log('status är: ', response.status);
 
         const data = await response.json()
@@ -138,11 +135,11 @@ const option = {
         method: 'POST',
         headers: {
         "Content-Type": 'application/json', 
-        "x-zocom": 'yum-PxtRFopRoKZwir25'
+        "x-zocom": 'yum-NKsTcw3OPrMQPoSz'
     },
     body: JSON.stringify(bodyToSend)
 }
-    fetch(url, option)
+    fetch(getTenantUrl, option)
 
 
 
