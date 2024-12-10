@@ -102,44 +102,45 @@
 
 //'yum-PxtRFopRoKZwir25'
 
-const keyUrl = 'https://fdnzawlcf6.execute-api.eu-north-1.amazonaws.com/keys'
-    const bodyToSend = {
-    name: 'Saaris'
-}
-    const options = {
-    method: 'POST',
-    headers: {
-        "Content-Type": 'application/json',  
+// const keyUrl = 'https://fdnzawlcf6.execute-api.eu-north-1.amazonaws.com/keys'
+//     const bodyToSend = {
+//     name: 'Saaris'
+// }
+//     const options = {
+//     method: 'POST',
+//     headers: {
+//         "Content-Type": 'application/json',  
 
-    },
+//     },
 
-    body: JSON.stringify(bodyToSend)
-}
+//     body: JSON.stringify(bodyToSend)
+// }
 
-    try {
-    const response = await fetch(keyUrl,options)
-        console.log('status är: ', response.status);
+//     try {
+//     const response = await fetch(keyUrl,options)
+//         console.log('status är: ', response.status);
 
-        const data = await response.json()
-        console.log('data från API: ', data);
+//         const data = await response.json()
+//         console.log('data från API: ', data);
 
 
-} catch (error) {
-    console.log('det gick inte ...', error.message);
+// } catch (error) {
+//     console.log('det gick inte ...', error.message);
 
-}
+// }
 
-const getTenantUrl = 'https://fdnzawlcf6.execute-api.eu-north-1.amazonaws.com/tenants'
+// const getTenantUrl = 'https://fdnzawlcf6.execute-api.eu-north-1.amazonaws.com/tenants'
 
-const option = {
-        method: 'POST',
-        headers: {
-        "Content-Type": 'application/json', 
-        "x-zocom": 'yum-NKsTcw3OPrMQPoSz'
-    },
-    body: JSON.stringify(bodyToSend)
-}
-    fetch(getTenantUrl, option)
+// const option = {
+//         method: 'POST',
+//         body: JSON.stringify
+//         headers: {
+//         "Content-Type": 'application/json', 
+//         "x-zocom": 'yum-NKsTcw3OPrMQPoSz'
+//     },
+//     body: JSON.stringify(bodyToSend)
+// }
+//     fetch(getTenantUrl, option)
 
 
 
