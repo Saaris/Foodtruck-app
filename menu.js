@@ -32,7 +32,7 @@ const getTenant = async () =>  {
 getTenant()
 
 
-const foodElement = document.getElementById('food');
+const foodElement = document.getElementById('menu-screen');
 
 const getMenu = async () => {
     
