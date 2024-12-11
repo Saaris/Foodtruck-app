@@ -33,7 +33,8 @@ getTenant()
 
 
 const foodElement = document.getElementById('menu-screen');
-
+//hämta dipsås och dryckeselementet och append resp sak i de
+//baserat på type(wonton, dip och drink)
 const getMenu = async () => {
     
     let response = await fetch(`${url}/menu`, {
@@ -52,36 +53,41 @@ const getMenu = async () => {
             menuButton.id = "menu";
             menuButton.classList.add('menu-box');
 
-
             const price = document.createElement('p');
             price.id = "city";
             price.classList.add('show-price');
             price.innerText = `${item.name}...............................${item.price}SEK`;
 
             
-            if (index < 5) {
+            if (item.type === 'wonton') {
                 
                 const foodIngredient = document.createElement('p');
                 foodIngredient.id = "food-ingredient";
                 foodIngredient.classList.add('ingredient');
                 foodIngredient.innerText = item.ingredients;
-
                
                 menuButton.appendChild(price);
                 menuButton.appendChild(foodIngredient);
+
+                foodElement.appendChild(menuButton)
             }
             
-            else if (index === 5) {
+            else if (item.type === 'dip') {
                 const sauceSection = document.createElement('p');
-                sauceSection.id = "sauce";
-                sauceSection.innerText = "DIPSÅS"; 
+                sauceSection.id = item.id;
+                sauceSection.innerText = item.name; 
+                sauceSection.classList.add('dip-sauce') //kan styla denna i css
+                //lägga in namn på såserna här
 
                 
-                menuButton.appendChild(price);
-                menuButton.appendChild(sauceSection);
+                //menuButton.appendChild(price);
+                //menuButton.appendChild(sauceSection);
+
+                const sauceContainer = document.getElementById('sauce-section')
+                sauceContainer.appendChild(sauceSection)
             }
             
-            else if (index === 6) {
+            else if (item.type === 'drink') {
                 const drink = document.createElement('p');
                 drink.id = "drink";
                 drink.innerText = "DRICKA"; 
@@ -90,10 +96,10 @@ const getMenu = async () => {
                 menuButton.appendChild(drink);
             }
 
-            foodElement.appendChild(menuButton);
+        
         });
     } else {
-        console.error('Expected an array of items, but got:', items);
+        console.error('sorry, error', items);
     }
 };
 
@@ -107,32 +113,32 @@ getMenu();
 //   'https://fdnzawlcf6.execute-api.eu-north-1.amazonaws.com/menu/q7jz' \
 //   -H 'accept: application/json'
 
-const getMenuId  = async () =>  {
-    const menuUrl = (`${url}/menu`);
+// const getMenuId  = async () =>  {
+//     const menuUrl = (`${url}/menu`);
 
-    // try {
+//     // try {
       
-      const response = await fetch(menuUrl + '/q7jz', {
-        method: 'GET',
-        headers: {
-          'Accept': 'application/json'
-        }
-      });
+//       const response = await fetch(menuUrl + '/q7jz', {
+//         method: 'GET',
+//         headers: {
+//           'Accept': 'application/json'
+//         }
+//       });
   
-      console.log('Response:', response);
+//       console.log('Response:', response);
   
-      if (response.ok) {
+//       if (response.ok) {
         
-        const data = await response.json();
-        console.log('Data:', data); 
-      } else {
-        throw new Error('Network response was not ok');
-      }
-    // } catch (error) {
+//         const data = await response.json();
+//         console.log('Data:', data); 
+//       } else {
+//         throw new Error('Network response was not ok');
+//       }
+//     // } catch (error) {
 
-    //   console.log(error);
-    // }
-  }
+//     //   console.log(error);
+//     // }
+//   }
   
 //   getMenuId();
   
