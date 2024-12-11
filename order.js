@@ -9,7 +9,7 @@
 // ]
 // }'
 // Req
-
+import { apiKey } from "./constants.js"
 
 let url = 'https://fdnzawlcf6.execute-api.eu-north-1.amazonaws.com'
 
@@ -23,7 +23,7 @@ const order = async () => {
             headers: {
                 'Accept': 'application/json', 
                 'Content-Type': 'application/json',
-                "x-zocom": "yum-ngfeNG1iaq9Q2PJK",
+                "x-zocom": apiKey,
             },
             body: JSON.stringify(bodyToSend) 
 
@@ -45,8 +45,6 @@ orderButton.addEventListener('click', async () => {
             body: JSON.stringify(bodyToSend)
         }
         fetch(`${url}/${tenantId}/orders`, options)
-
-    
 })
 
 

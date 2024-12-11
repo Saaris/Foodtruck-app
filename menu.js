@@ -1,5 +1,7 @@
 import { apiKey } from "./constants.js"
 
+
+
 let url = 'https://fdnzawlcf6.execute-api.eu-north-1.amazonaws.com'
 
 // fetch(`${url}/keys`, { method: 'POST' })
@@ -69,9 +71,14 @@ const getMenu = async () => {
                 //foodIngredient.id = "food-ingredient";
                 foodIngredient.classList.add('ingredient');
                 foodIngredient.innerText = item.ingredients;
+
+                const foodDescription = document.createElement('p')
+                foodDescription.classList.add('description');
+                foodDescription.innerText = item.description;
                
                 menuButton.appendChild(price);
                 menuButton.appendChild(foodIngredient);
+                menuButton.appendChild(foodDescription);
 
                 foodElement.appendChild(menuButton)
             }
