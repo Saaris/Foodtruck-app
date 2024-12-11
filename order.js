@@ -12,20 +12,22 @@
 
 
 let url = 'https://fdnzawlcf6.execute-api.eu-north-1.amazonaws.com'
-const tenantId = 'q7jz' //byta till getTenant sen?
+
 
 const orderButton = document.querySelector('.material-symbols-outlined')
 
 const order = async () => {
     try{
-        const promise = await fetch(`${url}/${tenantId}/orders`, {
+        const response = await fetch(`${url}/${tenantId}/orders`, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json', 
                 'Content-Type': 'application/json',
                 "x-zocom": "yum-ngfeNG1iaq9Q2PJK",
             },
-            body: JSON.stringify(bodyToSend) //skicka alla våra ordrar här? (items)
+            body: JSON.stringify(bodyToSend) 
+
+        
         })
     }catch(error){
         console.log('error:', error)
@@ -42,7 +44,7 @@ orderButton.addEventListener('click', async () => {
             },
             body: JSON.stringify(bodyToSend)
         }
-        fetch(url, options)
+        fetch(`${url}/${tenantId}/orders`, options)
 
     
 })

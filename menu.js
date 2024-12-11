@@ -1,3 +1,5 @@
+import { apiKey } from "./constants.js"
+
 let url = 'https://fdnzawlcf6.execute-api.eu-north-1.amazonaws.com'
 
 // fetch(`${url}/keys`, { method: 'POST' })
@@ -6,21 +8,19 @@ const getKey = async () => {
     let response= await fetch(`${url}/keys`, 
         { method: 'POST' })
     let data = await response.json()
-    return data.key
+    return data.apiKey
 }
 // getKey()
 
-const key=  "yum-ngfeNG1iaq9Q2PJK"
-
 
 const getTenant = async () =>  {
-    let key = await getKey()
+    let apiKey = await getKey()
     let response= await fetch(`${url}/tenants`, 
         {
         method: 'POST',
         headers: {
             "Content-Type": "application/json",
-            "x-zocom": key,
+            "x-zocom": apiKey,
         },
         body: JSON.stringify({
             name: "Sara Serti1"
@@ -38,7 +38,7 @@ const foodElement = document.getElementById('menu-screen');
 const getMenu = async () => {
     
     let response = await fetch(`${url}/menu`, {
-        headers: { "x-zocom": key }
+        headers: { "x-zocom": apiKey }
     });
 
     let data = await response.json();
@@ -58,11 +58,15 @@ const getMenu = async () => {
             price.classList.add('show-price');
             price.innerText = `${item.name}...............................${item.price}SEK`;
 
+            menuButton.addEventListener('click', () => {
+                pickItem(item);
+            })
+
             
             if (item.type === 'wonton') {
                 
                 const foodIngredient = document.createElement('p');
-                foodIngredient.id = "food-ingredient";
+                //foodIngredient.id = "food-ingredient";
                 foodIngredient.classList.add('ingredient');
                 foodIngredient.innerText = item.ingredients;
                
@@ -74,14 +78,13 @@ const getMenu = async () => {
             
             else if (item.type === 'dip') {
                 const sauceSection = document.createElement('p');
-                sauceSection.id = item.id;
+                //sauceSection.id = item.id;
                 sauceSection.innerText = item.name; 
                 sauceSection.classList.add('dip-sauce') //kan styla denna i css
                 //lägga in namn på såserna här
-
-                
-                //menuButton.appendChild(price);
-                //menuButton.appendChild(sauceSection);
+                sauceSection.addEventListener('click', () => {
+                    pickItem(item);
+                })
 
                 const sauceContainer = document.getElementById('sauce-section')
                 sauceContainer.appendChild(sauceSection)
@@ -89,12 +92,17 @@ const getMenu = async () => {
             
             else if (item.type === 'drink') {
                 const drink = document.createElement('p');
-                drink.id = "drink";
-                drink.innerText = "DRICKA"; 
+                //drink.id = item.id;
+                drink.innerText = item.name;  
+                drink.classList.add('drinks')
+                drink.addEventListener('click', () => {
+                    pickItem(item);
+                })
 
-                menuButton.appendChild(price);
-                menuButton.appendChild(drink);
+                const drinkContainer = document.getElementById('drink-section')
+                drinkContainer.appendChild(drink)
             }
+
 
         
         });
@@ -105,6 +113,9 @@ const getMenu = async () => {
 
 getMenu();
 
+function pickItem(item) {
+    console.log(`Du klickade på: ${item.name}`);
+}
             
         
 

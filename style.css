@@ -1,3 +1,7 @@
+body {
+    background-color: rgb(52, 150, 126);
+
+}
 #menu {
     display: flex;
     flex-direction: column;
@@ -11,7 +15,7 @@
 }  
 
 .menu-box{
-    width: 90%;
+    width: 100%;
     background-color: rgb(97, 93, 93);
     color: white;
     font-size: 18px;
@@ -21,6 +25,7 @@
     padding: 0.8em;
     border-radius: 10px;
     border: 1px dashed grey;
+    
 }
 
 .menu-box:hover{
@@ -73,20 +78,34 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    font-size: 20px;
+    font-size: 24px;
 }
+
 .ingredient {
-    font-size: 16px;
+    font-size: 22px;
 }
 #sauce-button.menu-box {
     display: flex;
 
 }
-.sauce-section {
+#sauce-section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, auto);
     gap: 10px; 
+    background-color: rgb(97, 93, 93);
+    color: white;
+    font-size: 22px;
+    padding: 0.8em;
+    border-radius: 10px;
+    border: 1px dashed grey;
+    width: 100%;
+    margin-top: 0.5em;
+}
+
+#sauce-section:hover{
+    background-color: rgb(76, 63, 52);
+    cursor: pointer;
 }
 #sauce-container{
     margin-bottom: 0.5em;
@@ -98,12 +117,42 @@
     margin-top: 0.5em;
     border-radius: 10px;
 }
-.drink-section {
+#drink-section {
+    
+    background-color: rgb(97, 93, 93);
+    font-size: 22px;
+    padding: 0.8em;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px; 
+    color: white;
+    width: 100%;
+    margin-top: 0.5em;
+}
+    
+.drinks:hover {
+    background-color: rgb(76, 63, 52);
+    cursor: pointer;
+}
+div {
+    font-size: 24px;
+}
+.dip-sauce {
+    padding: 0.5em;
+    margin: 0.3em
+}
+#all-drinks {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, auto);
     gap: 10px; 
-}
-.sauce-drink {
-    gap: 1em;
+    background-color: rgb(97, 93, 93);
+    color: white;
+    font-size: 22px;
+    padding: 0.8em;
+    border-radius: 10px;
+    border: 1px dashed grey;
+    width: 100%;
+    margin-top: 0.5em;
 }
