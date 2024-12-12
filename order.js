@@ -1,3 +1,5 @@
+
+//order
 // Detta står i API:
 // curl -X 'POST' \
 // 'https://fdnzawlcf6.execute-api.eu-north-1.amazonaws.com/q7jz/orders' \  request url
@@ -9,15 +11,13 @@
 //  ]
 //  }'
 //  Req
-import { apiKey, tenantId } from "./constants.js"
-
-
-let url = 'https://fdnzawlcf6.execute-api.eu-north-1.amazonaws.com'
-
-
+import { apiKey, url, tenantId } from "./constants.js"
 const orderButton = document.querySelector('.material-symbols-outlined')
 
 const order = async () => {
+    const bodyToSend = {
+        items: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17] 
+    };
     try{
         const response = await fetch(`${url}/${tenantId}/orders`, {
             method: 'POST',
@@ -25,22 +25,21 @@ const order = async () => {
                 "x-zocom": apiKey,
                 'Accept': 'application/json', 
                 'Content-Type': 'application/json',
-                "items": [
-                    1, 2, 3 ,4 ,5 ,6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17
-                  ]
             },
             body: JSON.stringify(bodyToSend) 
-
-        
         })
-    }catch(error){
-        console.log('error:', error)
+        if (response.ok) {
+            const data = await response.json();
+            console.log('Beställning skickad:', data);
+        } else {
+            console.log('Fel vid beställning:', response.status);
+        }
+    } catch (error) {
+        console.log('Fel:', error);
     }
-}
-orderButton.addEventListener('click', async () => {
+};
 
-        fetch(`${url}/${tenantId}/orders`, order)
-})
+orderButton.addEventListener('click', order);
 
 
 //Detta står i API:

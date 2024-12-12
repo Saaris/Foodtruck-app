@@ -1,4 +1,4 @@
- import { apiKey, url, } from "./constants.js"
+ import { apiKey, url, tenantId } from "./constants.js"
 
 const foodElement = document.getElementById('menu-screen');
 //hämta dipsås och dryckeselementet och append resp sak i de
@@ -90,3 +90,46 @@ function pickItem(item) {
     console.log(`Du klickade på: ${item.name}`);
 }
             
+
+//order
+// Detta står i API:
+// curl -X 'POST' \
+// 'https://fdnzawlcf6.execute-api.eu-north-1.amazonaws.com/q7jz/orders' \  request url
+//  -H 'accept: application/json' \
+//  -H 'Content-Type: application/json' \
+//  -d '{
+//  "items": [
+//    1
+//  ]
+//  }'
+//  Req
+
+
+const orderButton = document.querySelector('.material-symbols-outlined')
+
+const order = async () => {
+    const bodyToSend = {
+        items: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17] 
+    };
+    try{
+        const response = await fetch(`${url}/${tenantId}/orders`, {
+            method: 'POST',
+            headers: {
+                "x-zocom": apiKey,
+                'Accept': 'application/json', 
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(bodyToSend) 
+        })
+        if (response.ok) {
+            const data = await response.json();
+            console.log('Beställning skickad:', data);
+        } else {
+            console.log('Fel vid beställning:', response.status);
+        }
+    } catch (error) {
+        console.log('Fel:', error);
+    }
+};
+
+orderButton.addEventListener('click', order);
