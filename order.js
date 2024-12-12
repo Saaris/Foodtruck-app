@@ -1,15 +1,16 @@
-//Detta står i API:
-//curl -X 'POST' \
+// Detta står i API:
+// curl -X 'POST' \
 // 'https://fdnzawlcf6.execute-api.eu-north-1.amazonaws.com/q7jz/orders' \  request url
-// -H 'accept: application/json' \
-// -H 'Content-Type: application/json' \
-// -d '{
-// "items": [
-//   1
-// ]
-// }'
-// Req
-import { apiKey } from "./constants.js"
+//  -H 'accept: application/json' \
+//  -H 'Content-Type: application/json' \
+//  -d '{
+//  "items": [
+//    1
+//  ]
+//  }'
+//  Req
+import { apiKey, tenantId } from "./constants.js"
+
 
 let url = 'https://fdnzawlcf6.execute-api.eu-north-1.amazonaws.com'
 
@@ -21,9 +22,12 @@ const order = async () => {
         const response = await fetch(`${url}/${tenantId}/orders`, {
             method: 'POST',
             headers: {
+                "x-zocom": apiKey,
                 'Accept': 'application/json', 
                 'Content-Type': 'application/json',
-                "x-zocom": apiKey,
+                "items": [
+                    1, 2, 3 ,4 ,5 ,6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17
+                  ]
             },
             body: JSON.stringify(bodyToSend) 
 
@@ -35,16 +39,7 @@ const order = async () => {
 }
 orderButton.addEventListener('click', async () => {
 
-        const options = {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json', 
-                'Content-Type': 'application/json',
-                "x-zocom": tenantId,
-            },
-            body: JSON.stringify(bodyToSend)
-        }
-        fetch(`${url}/${tenantId}/orders`, options)
+        fetch(`${url}/${tenantId}/orders`, order)
 })
 
 
@@ -55,19 +50,26 @@ orderButton.addEventListener('click', async () => {
 
 
 
-const orderElement = document.getElementById('.material-symbols-outlined');
+// const orderElement = document.getElementById('.material-symbols-outlined');
 
-const getOrder = async () => {
+// const getOrder = async () => {
     
-    let response = await fetch(`${url}/orders`, {
-        headers: { "x-zocom": key }
-    });
+//     let response = await fetch(`${url}/${tenantId}/orders`, {
+//         headers:  {
+//             'Accept': 'application/json', 
+//             "x-zocom": apiKey,
+//         }
 
-    let data = await response.json();
-    console.log(data);  
-}
-orderElement.appendChild(orderButton); {
+//     });
+
+//     let data = await response.json();
+//     console.log(data);  
+// }
+// orderElement.appendChild(orderButton); {
 
 
-}
-getOrder()
+// }
+// getOrder()
+
+
+

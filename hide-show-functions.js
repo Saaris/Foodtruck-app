@@ -11,7 +11,19 @@ function showMenuScreen() {
         element.removeAttribute('hidden');
     });
 }
+function hideFirstScreen() {
+    let firstScreenElements = document.querySelector('.img');
+    firstScreenElements.forEach(function(element) {
+        element.setAttribute('hidden', true);
+    });
+}
 
+function showFirstScreen() {
+    let firstScreenElements = document.querySelector('.img');
+    firstScreenElements.forEach(function(element) {
+        element.removeAttribute('hidden');
+    });
+}
 function hideOrderScreen() {
     let orderScreenElements = document.querySelectorAll('#order *');
     orderScreenElements.forEach(function(element) {
@@ -27,16 +39,5 @@ function showOrderScreen() {
 }
 
 
-//alternativt
+export { hideMenuScreen, showMenuScreen, hideFirstScreen, showFirstScreen, hideOrderScreen, showOrderScreen}
 
-function hideScreen(screenId) {
-    document.getElementById(screenId).setAttribute('hidden', true);
-}
-
-function showScreen(screenId) {
-    document.getElementById(screenId).removeAttribute('hidden');
-}
-hideScreen('menu-screen');
-showScreen('menu-screen');
-hideScreen('order');
-showScreen('order');

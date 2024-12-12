@@ -1,42 +1,9 @@
-import { apiKey } from "./constants.js"
-
-
-
-let url = 'https://fdnzawlcf6.execute-api.eu-north-1.amazonaws.com'
-
-// fetch(`${url}/keys`, { method: 'POST' })
-
-const getKey = async () => {
-    let response= await fetch(`${url}/keys`, 
-        { method: 'POST' })
-    let data = await response.json()
-    return data.apiKey
-}
-// getKey()
-
-
-const getTenant = async () =>  {
-    let apiKey = await getKey()
-    let response= await fetch(`${url}/tenants`, 
-        {
-        method: 'POST',
-        headers: {
-            "Content-Type": "application/json",
-            "x-zocom": apiKey,
-        },
-        body: JSON.stringify({
-            name: "Sara Serti1"
-        })
-    })
-    let data = await response.json()
-    console.log(data)
-}
-getTenant()
-
+ import { apiKey, url, } from "./constants.js"
 
 const foodElement = document.getElementById('menu-screen');
 //hämta dipsås och dryckeselementet och append resp sak i de
 //baserat på type(wonton, dip och drink)
+
 const getMenu = async () => {
     
     let response = await fetch(`${url}/menu`, {
@@ -110,7 +77,6 @@ const getMenu = async () => {
                 drinkContainer.appendChild(drink)
             }
 
-
         
         });
     } else {
@@ -124,39 +90,3 @@ function pickItem(item) {
     console.log(`Du klickade på: ${item.name}`);
 }
             
-        
-
-
-//  curl -X 'GET' \
-//   'https://fdnzawlcf6.execute-api.eu-north-1.amazonaws.com/menu/q7jz' \
-//   -H 'accept: application/json'
-
-// const getMenuId  = async () =>  {
-//     const menuUrl = (`${url}/menu`);
-
-//     // try {
-      
-//       const response = await fetch(menuUrl + '/q7jz', {
-//         method: 'GET',
-//         headers: {
-//           'Accept': 'application/json'
-//         }
-//       });
-  
-//       console.log('Response:', response);
-  
-//       if (response.ok) {
-        
-//         const data = await response.json();
-//         console.log('Data:', data); 
-//       } else {
-//         throw new Error('Network response was not ok');
-//       }
-//     // } catch (error) {
-
-//     //   console.log(error);
-//     // }
-//   }
-  
-//   getMenuId();
-  

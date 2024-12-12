@@ -1,4 +1,5 @@
 
-const apiKey = "yum-ngfeNG1iaq9Q2PJK"
-const tenantId = 'q7jz'
-export { apiKey, tenantId }
+const apiKey = "yum-JAaNDtW2DyvIHS96"
+const tenantId = "u3hm"
+const url = 'https://fdnzawlcf6.execute-api.eu-north-1.amazonaws.com'
+export { apiKey, tenantId, url }
