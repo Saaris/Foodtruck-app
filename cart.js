@@ -35,7 +35,36 @@ export const showCart = () => {
         const quantityContainer = document.createElement('div')
         quantityContainer.classList.add('quantity-container')
 
+        const plusButton = document.createElement('button')
+        plusButton.textContent = '+'
+        plusButton.classList.add('plus-button')
         
+        const minusButton = document.createElement('button')
+        minusButton.textContent = '-'
+        minusButton.classList.add('minus-button')
+
+        const quantityElement = document.createElement('span')
+        quantityElement.textContent = quantity
+
+        quantityContainer.appendChild(minusButton)
+        quantityContainer.appendChild(quantityElement)
+        quantityContainer.appendChild(plusButton)
+
+        itemElement.appendChild(quantityContainer)
+
+       
+        plusButton.addEventListener('click', () => {
+            cart.push({...item})
+            
+        })
+
+        minusButton.addEventListener('click', () => {
+            cart.splice(i, 1)
+            
+        })
+
+        cartItemsElement.appendChild(itemElement)
+
     })
     
     }
