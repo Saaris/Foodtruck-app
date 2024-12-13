@@ -16,7 +16,7 @@ export const showCart = () => {
         
         const itemElement = document.createElement("div")
         const quantity = cart.filter(item => item.name === item.name).length;
-        const itemPrice = (item.price * quantity)
+        const totalItemPrice = (item.price * quantity)
         
         itemElement.classList.add('item')
 
@@ -27,7 +27,7 @@ export const showCart = () => {
 
        
         const priceElement = document.createElement('span')
-        priceElement.textContent = `${itemPrice}SEK`
+        priceElement.textContent = `${totalItemPrice}SEK`
         itemElement.appendChild(priceElement)  
     })
     
