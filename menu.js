@@ -1,4 +1,5 @@
- import { apiKey, url } from "./constants.js"
+import { apiKey, url } from "./constants.js"
+import {cart, showCart} from "./cart.js";
 
 const foodElement = document.getElementById('menu-screen');
 //hämta dipsås och dryckeselementet och append resp sak i de
@@ -86,7 +87,9 @@ const getMenu = async () => {
 
 getMenu();
 
-function pickItem(item) {
+
+export function pickItem(item) {
+    cart.push(item)
     console.log(`Du klickade på: ${item.name}`);
 }
             

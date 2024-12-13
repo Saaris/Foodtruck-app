@@ -47,38 +47,31 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 5px;
-}
-#order {
-    background-color: lightgrey;
-}
-
-.order-button {
-  border-radius: 50%; 
-  width: 40px;
-  height: 40px;
+    border-radius: 50%; 
+    width: 40px;
+    height: 40px;
   
+}
+.material-symbols-outlined1 {
+    background-color: rgb(205, 202, 202);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; 
+    width: 40px;
+    height: 40px;
 }
 #order-section {
     display: flex;
     flex-direction: column;
 }
-.order-city {
+.h4{
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 2em;
-
-}
-.total-section {
-    background-color: rgb(213, 214, 215);
-    width: 350px;
-}
-.show-price {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    font-size: 24px;
 }
 
 .ingredient {
@@ -156,24 +149,80 @@ div {
     width: 100%;
     margin-top: 0.5em;
 }
-.img {
-    width: 100%;
-}
 #api-button, #tenant-button {
     display: none;
 }
-.image-container {
-    position: relative;
-    display: inline-block;
+
+.hidden {
+    display: none;
+}
+
+#cart {
+    z-index: 5;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100vw;
+    height: 100vw;
+    background-color: rgb(243, 243, 243);
+}
+  .item {
+    display: flex;
+    flex-direction: row;
+    padding: 0.5em;
+    align-items: center ;
+    gap: 1em;
+    
   }
-  .menu-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 125px; 
-    height: 50px; 
-    font-size: 22px;
+  .quantity-container {
+    gap: 0.5em;
+    width: 50%; 
+    display: flex;
+    flex-direction: row;
+    margin: 1em;
+  }
+  .pay-button{
+    background-color: rgb(65, 65, 65);
+    width: 100%;
+    padding: 0.8em 0.4em;
+    font-size: 26px;
+    color: white;
+    align-items: ;
+
+  }  
+  .pay-button:hover{
+    cursor: pointer;
+  }
+  .total {
+    background-color: rgb(213, 214, 215);
+    width: 100%;
+    font-size: 26px;
     font-weight: bold;
-    background-color: whitesmoke;
+  }
+  .show-price {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 24px; 
+  }
+  .moms {
+    font-size: 22px;
+  }
+  .minus-button{
+    width: 40px;
+    height: 40px;
+    padding: 0.3em 0.3em;
+    border-radius: 50%;
+    font-size: 20px;
+    background-color: lightgrey;
+   
+  }
+  .plus-button{
+    width: 40px;
+    height: 40px;
+    padding: 0.3em 0.3em;
+    border-radius: 50%;
+    font-size: 20px;
+    background-color: lightgrey;
+    
   }

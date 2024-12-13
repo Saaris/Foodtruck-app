@@ -12,14 +12,16 @@
 
 
 import { apiKey, url, tenantId } from "./constants.js"
+import {showCart} from "./cart.js";
 const orderButton = document.querySelector('.material-symbols-outlined')
 
+orderButton.addEventListener('click', showCart);
 
 const startOrder = async () => {
     console.log('startOrder')
    
     const bodyToSend = {
-        items: [ 1, 2, 3, 4 ,5 ,6]
+        items: [ 1, 2, 3, 4 ,5 ,6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
     };
     try{
         const response = await fetch(`${url}/${tenantId}/orders`, {
@@ -33,7 +35,7 @@ const startOrder = async () => {
         })
         if (response.ok) {
             const data = await response.data;
-            console.log('beställning skickad:', data);
+            console.log('beställning skickad:', bodyToSend);
         } else {
             console.log('fel vid beställning:', response.status);
         }
@@ -41,9 +43,8 @@ const startOrder = async () => {
         console.log('fel:', error);
     }
 };
-orderButton.addEventListener('click', startOrder);
 
-//const orderButton = document.querySelector('.material-symbols-outlined')
+//const orderButton = document.querySelector('.')
 //orderButton.addEventListener('click', startOrder);
 
 
