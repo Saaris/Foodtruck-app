@@ -1,6 +1,6 @@
 
 import { apiKey, url, tenantId } from "./constants.js"
-import {showCart} from "./cart.js";
+import {showCart, cart} from "./cart.js";
 import { hideOrderScreen, showMenuScreen } from "./hide-show-functions.js";
 const orderButton = document.querySelector('.material-symbols-outlined')
 
@@ -75,7 +75,10 @@ payButton.addEventListener('click', () => {
 
 const backToMenu = document.getElementById('cart-button')
 backToMenu.addEventListener('click', () => {
+    cart.length = 0;
+    showCart()
     document.querySelector('#cart').classList.add('hidden') 
     document.querySelector('#menu-screen').classList.remove('hidden')
+    
 console.log('tillbaka till meny')
 })

@@ -26,7 +26,7 @@ const getMenu = async () => {
             const price = document.createElement('p');
             price.id = "city";
             price.classList.add('show-price');
-            price.innerText = `${item.name}...............................${item.price}SEK`;
+            price.innerText = `${item.name}...........................${item.price} SEK`;
 
             menuButton.addEventListener('click', () => {
                 pickItem(item);

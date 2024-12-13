@@ -68,8 +68,12 @@ export const showCart = () => {
         })
 
         minusButton.addEventListener('click', () => {
-            cart.splice(i, 1)
-            showCart()
+            
+            const itemIndex = cart.findIndex(cartItem => cartItem.name === item.name);
+            if (itemIndex !== -1) {
+                cart.splice(itemIndex, 1); // Ta bort objektet på rätt index
+                showCart(); // Uppdatera cart
+            }
         })
 
         cartItemsElement.appendChild(itemElement)
