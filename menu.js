@@ -26,7 +26,7 @@ const getMenu = async () => {
             const price = document.createElement('p');
             price.id = "city";
             price.classList.add('show-price');
-            price.innerText = `${item.name}...........................${item.price} SEK`;
+            price.innerText = `${item.name}.....................${item.price} SEK`;
 
             menuButton.addEventListener('click', () => {
                 pickItem(item);
@@ -56,6 +56,7 @@ const getMenu = async () => {
                 //sauceSection.id = item.id;
                 sauceSection.innerText = item.name; 
                 sauceSection.classList.add('dip-sauce') //kan styla denna i css
+                
                 //lägga in namn på såserna här
                 sauceSection.addEventListener('click', () => {
                     pickItem(item);

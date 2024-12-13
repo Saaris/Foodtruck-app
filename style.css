@@ -1,11 +1,12 @@
 * {
-    font-family: "Fira Sans", sans-serif;
-    
+    /* font-family: "Fira Sans", sans-serif; */
+
 }
+
 body {
     font-family: "Fira Sans", sans-serif;
     background-color: #489078;
-    text-shadow: -3px -3px 5px rgba(0, 0, 0, 0.8);
+    
 
 }
 #menu-font {
@@ -15,19 +16,24 @@ body {
     background-color: #489078;
 }  
 
+h1 {
+    font-size: 38px;
+    padding-left: 0.3em;
+    padding-bottom: 0.2em;
+    padding-top: 1em;
+    margin: 0;
+    color: white;
+}
 .menu-box{
-    text-shadow: -3px -3px 5px rgba(0, 0, 0, 0.8);
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
     width: 96%;
     background-color: #605858;
     color: white;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
+    margin: 0;
     border: 1px dashed grey;
-    margin-left: 0.4em;
-    margin-right: 0.4em;
-
     
 }
 
@@ -38,6 +44,7 @@ body {
 
 #menu-screen {
     width: 100%;
+    font-family: "Fira Sans", sans-serif;
 
 }
 .menu-box:hover{
@@ -87,11 +94,13 @@ body {
 }
 
 .ingredient {
-    font-size: 24px;
+    font-size: 22px;
     text-align: left;
     margin: 0;
     padding: 0.3em;
     margin: 0.2em;
+    width: 380px;
+    
 }
 
 .description {
@@ -109,14 +118,14 @@ body {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, auto);
     gap: 10px; 
-    background-color: rgb(97, 93, 93);
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    background-color: #605858;
     color: white;
     font-size: 22px;
-    padding: 0.8em;
-    border-radius: 10px;
     border: 1px dashed grey;
-    width: 100%;
+    width: 96%;
     margin-top: 0.5em;
+    
 }
 
 #sauce-section:hover{
@@ -134,17 +143,16 @@ body {
     border-radius: 10px;
 }
 #drink-section {
-    
-    background-color: rgb(97, 93, 93);
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    background-color: #605858;
     font-size: 22px;
-    padding: 0.8em;
-    border-radius: 10px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px; 
     color: white;
-    width: 100%;
+    width: 96%;
     margin-top: 0.5em;
+    margin-bottom: 4em;
 }
     
 .drinks:hover {
@@ -155,10 +163,11 @@ div {
     font-size: 24px;
 }
 .dip-sauce {
-    padding: 0.5em;
-    margin: 0.3em
+    padding: 0;
+    margin: 0;
+
 }
-#all-drinks {
+/* #all-drinks {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, auto);
@@ -170,8 +179,8 @@ div {
     border-radius: 10px;
     border: 1px dashed grey;
     width: 100%;
-    margin-top: 0.5em;
-}
+    margin-top: 0.5em; */
+/* } */
 #api-button, #tenant-button {
     display: none;
 }
@@ -232,7 +241,6 @@ div {
     width: 100%;
     font-size: 26px; 
     font-weight: bold;
-    margin: 0;
     
   }
   .moms {
@@ -269,4 +277,12 @@ div {
     padding: 0.3em;
     margin: 0;
     text-transform: uppercase;
+}
+.show-sauce-price {
+    font-size: 26px;
+    font-weight: bold;
+}
+.drink-price {
+    font-size: 26px;
+    font-weight: bold;
 }
