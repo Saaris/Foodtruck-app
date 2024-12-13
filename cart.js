@@ -4,8 +4,9 @@ export const cart = []
 
 export const showCart = () => {
     cartItem.classList.remove("hidden")
-
     cartItemsElement.textContent = "";
+
+    
 
     const chosenItems = []
     cart.forEach((item) => {
@@ -55,12 +56,12 @@ export const showCart = () => {
        
         plusButton.addEventListener('click', () => {
             cart.push({...item})
-            
+            showCart()
         })
 
         minusButton.addEventListener('click', () => {
             cart.splice(i, 1)
-            
+            showCart()
         })
 
         cartItemsElement.appendChild(itemElement)

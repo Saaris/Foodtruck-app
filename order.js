@@ -1,15 +1,3 @@
-//order
-// Detta står i API:
-// curl -X 'POST' \
-// 'https://fdnzawlcf6.execute-api.eu-north-1.amazonaws.com/q7jz/orders' \  request url
-//  -H 'accept: application/json' \
-//  -H 'Content-Type: application/json' \
-//  -d '{
-//  "items": [
-//    1
-//  ]
-//  }'
-
 
 import { apiKey, url, tenantId } from "./constants.js"
 import {showCart} from "./cart.js";
@@ -43,6 +31,14 @@ const startOrder = async () => {
         console.log('fel:', error);
     }
 };
+
+const payButton = document.querySelector('.pay-button');
+
+payButton.addEventListener('click', () => {
+    startOrder();
+    console.log("Ordern har startat!")
+});
+
 
 //const orderButton = document.querySelector('.')
 //orderButton.addEventListener('click', startOrder);
