@@ -28,7 +28,14 @@ export const showCart = () => {
        
         const priceElement = document.createElement('span')
         priceElement.textContent = `${totalItemPrice}SEK`
-        itemElement.appendChild(priceElement)  
+        itemElement.appendChild(priceElement) 
+        
+    
+
+        const quantityContainer = document.createElement('div')
+        quantityContainer.classList.add('quantity-container')
+
+        
     })
     
     }
