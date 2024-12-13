@@ -1,6 +1,7 @@
 
 import { apiKey, url, tenantId } from "./constants.js"
 import {showCart} from "./cart.js";
+import { hideOrderScreen, showMenuScreen } from "./hide-show-functions.js";
 const orderButton = document.querySelector('.material-symbols-outlined')
 
 orderButton.addEventListener('click', showCart);
@@ -50,10 +51,8 @@ payButton.addEventListener('click', () => {
 //   -H 'accept: application/json'
 
 
-// const backToMenu = document.querySelector('.material-symbols-outlined1')
-// const finishOrderButton = document.querySelector('.material-symbols-outlined')
 
-// const finishOrder = async () => {
+ //const recieveOrder = async () => {
     
 //     let response = await fetch(`${url}/${tenantId}/orders`, {
 //         headers:  {
@@ -70,7 +69,14 @@ payButton.addEventListener('click', () => {
 
 
 // }
-// finishOrder()
+// recieveOrder()
 
 
 
+const backToMenu = document.querySelector('.material-symbols-outlined1')
+ backToMenu.addEventListener('click', () => {
+    console.log('kan ej gå tillbaka till meny')
+    showMenuScreen()
+    hideOrderScreen() 
+    console.log('tillbaka till meny')
+})

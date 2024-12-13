@@ -168,7 +168,7 @@ div {
 }
   .item {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     padding: 0.5em;
     align-items: center ;
     gap: 1em;
@@ -225,4 +225,9 @@ div {
     font-size: 20px;
     background-color: lightgrey;
     
+  }
+  .name-price-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }

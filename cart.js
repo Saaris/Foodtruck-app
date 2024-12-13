@@ -22,15 +22,21 @@ export const showCart = () => {
         itemElement.classList.add('item')
 
         const itemNameElement = document.createElement("h4")
-        itemNameElement.textContent = item.name
+        itemNameElement.textContent = item.name.toUpperCase();
         
-        itemElement.appendChild(itemNameElement)
+        //itemElement.appendChild(itemNameElement)
 
        
         const priceElement = document.createElement('span')
-        priceElement.textContent = `${totalItemPrice}SEK`
+        priceElement.textContent = `..............................${totalItemPrice}SEK`
         itemElement.appendChild(priceElement) 
         
+        const namePriceContainer = document.createElement('div')
+        namePriceContainer.classList.add('name-price-container')
+        
+        
+        namePriceContainer.appendChild(itemNameElement)
+        namePriceContainer.appendChild(priceElement)
     
 
         const quantityContainer = document.createElement('div')
@@ -50,8 +56,10 @@ export const showCart = () => {
         quantityContainer.appendChild(minusButton)
         quantityContainer.appendChild(quantityElement)
         quantityContainer.appendChild(plusButton)
-
+        
+        itemElement.appendChild(namePriceContainer)
         itemElement.appendChild(quantityContainer)
+        
 
        
         plusButton.addEventListener('click', () => {

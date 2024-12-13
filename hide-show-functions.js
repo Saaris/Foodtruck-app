@@ -10,19 +10,8 @@ function showMenuScreen() {
     menuScreenElements.forEach(function(element) {
         element.removeAttribute('hidden');
     });
-}
-function hideFirstScreen() {
-    let firstScreenElements = document.querySelector('.img');
-    firstScreenElements.forEach(function(element) {
-        element.setAttribute('hidden', true);
-    });
-}
 
-function showFirstScreen() {
-    let firstScreenElements = document.querySelector('.img');
-    firstScreenElements.forEach(function(element) {
-        element.removeAttribute('hidden');
-    });
+
 }
 function hideOrderScreen() {
     let orderScreenElements = document.querySelectorAll('#order *');
@@ -39,5 +28,6 @@ function showOrderScreen() {
 }
 
 
-export { hideMenuScreen, showMenuScreen, hideFirstScreen, showFirstScreen, hideOrderScreen, showOrderScreen}
+
+export { hideMenuScreen, showMenuScreen, hideOrderScreen, showOrderScreen}
 
