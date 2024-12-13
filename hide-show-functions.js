@@ -1,3 +1,5 @@
+export { hideMenuScreen, showMenuScreen, hideOrderScreen, showOrderScreen}
+
 function hideMenuScreen() {
     let menuScreenElements = document.querySelectorAll('#menu-screen *');
     menuScreenElements.forEach(function(element) {
@@ -14,14 +16,14 @@ function showMenuScreen() {
 
 }
 function hideOrderScreen() {
-    let orderScreenElements = document.querySelectorAll('#order *');
+    let orderScreenElements = document.querySelectorAll('#cart *');
     orderScreenElements.forEach(function(element) {
         element.setAttribute('hidden', true);
     });
 }
 
 function showOrderScreen() {
-    let orderScreenElements = document.querySelectorAll('#order *');
+    let orderScreenElements = document.querySelectorAll('#cart *');
     orderScreenElements.forEach(function(element) {
         element.removeAttribute('hidden');
     });
@@ -29,5 +31,5 @@ function showOrderScreen() {
 
 
 
-export { hideMenuScreen, showMenuScreen, hideOrderScreen, showOrderScreen}
+
 

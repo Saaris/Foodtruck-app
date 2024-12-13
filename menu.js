@@ -1,7 +1,7 @@
 import { apiKey, url } from "./constants.js"
 import {cart, showCart} from "./cart.js";
 
-const foodElement = document.getElementById('menu-screen');
+const foodElement = document.querySelector('.menu-sections');
 //hämta dipsås och dryckeselementet och append resp sak i de
 //baserat på type(wonton, dip och drink)
 

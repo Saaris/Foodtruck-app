@@ -73,10 +73,9 @@ payButton.addEventListener('click', () => {
 
 
 
-const backToMenu = document.querySelector('.material-symbols-outlined1')
- backToMenu.addEventListener('click', () => {
-    console.log('kan ej gå tillbaka till meny')
-    showMenuScreen()
-    hideOrderScreen() 
-    console.log('tillbaka till meny')
+const backToMenu = document.getElementById('cart-button')
+backToMenu.addEventListener('click', () => {
+    document.querySelector('#cart').classList.add('hidden') 
+    document.querySelector('#menu-screen').classList.remove('hidden')
+console.log('tillbaka till meny')
 })
