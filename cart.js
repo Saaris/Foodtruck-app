@@ -6,16 +6,29 @@ export const showCart = () => {
     cartItem.classList.remove("hidden")
 
     cartItemsElement.textContent = "";
-    
+
     const chosenItems = []
     cart.forEach((item) => {
         if (chosenItems.includes(item.name)) 
+
+            return
+            chosenItems.push(item.name)
         
         const itemElement = document.createElement("div")
         const quantity = cart.filter(item => item.name === item.name).length;
-        const price = (item.price * quantity)
+        const itemPrice = (item.price * quantity)
         
         itemElement.classList.add('item')
+
+        const itemNameElement = document.createElement("h4")
+        itemNameElement.textContent = item.name
+        
+        itemElement.appendChild(itemNameElement)
+
+       
+        const priceElement = document.createElement('span')
+        priceElement.textContent = `${itemPrice}SEK`
+        itemElement.appendChild(priceElement)  
     })
     
     }
