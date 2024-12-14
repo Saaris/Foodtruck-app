@@ -6,6 +6,7 @@ const orderButton = document.querySelector('.material-symbols-outlined')
 
 orderButton.addEventListener('click', showCart);
 
+
 const startOrder = async () => {
     console.log('startOrder')
    
@@ -23,8 +24,9 @@ const startOrder = async () => {
             body: JSON.stringify(bodyToSend) 
         })
         if (response.ok) {
-            const data = await response.data;
+            const data = await response.json;
             console.log('beställning skickad:', bodyToSend);
+            cart.length = 0;
         } else {
             console.log('fel vid beställning:', response.status);
         }
@@ -38,11 +40,10 @@ const payButton = document.querySelector('.pay-button');
 payButton.addEventListener('click', () => {
     startOrder();
     console.log("Ordern har startat!")
+    recieveOrder()
+    //här lägger du i GET request functionen
 });
 
-
-//const orderButton = document.querySelector('.')
-//orderButton.addEventListener('click', startOrder);
 
 
 //Detta står i API:
@@ -52,23 +53,23 @@ payButton.addEventListener('click', () => {
 
 
 
- //const recieveOrder = async () => {
+ const recieveOrder = async () => {
     
-//     let response = await fetch(`${url}/${tenantId}/orders`, {
-//         headers:  {
-//             'Accept': 'application/json', 
-//             "x-zocom": apiKey,
-//         }
+    let response = await fetch(`${url}/${tenantId}/orders`, {
+        headers:  {
+            'Accept': 'application/json', 
+            "x-zocom": apiKey,
+        }
 
-//     });
+    });
 
-//     let data = await response.json();
-//     console.log(data);  
-// }
-// orderElement.appendChild(orderButton); {
+    let data = await response.json();
+    console.log(data);  
+}
+orderElement.appendChild(showCart); {
 
 
-// }
+}
 // recieveOrder()
 
 

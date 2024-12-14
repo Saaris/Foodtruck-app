@@ -2,8 +2,6 @@ import { apiKey, url } from "./constants.js"
 import {cart, showCart} from "./cart.js";
 
 const foodElement = document.querySelector('.menu-sections');
-//hämta dipsås och dryckeselementet och append resp sak i de
-//baserat på type(wonton, dip och drink)
 
 const getMenu = async () => {
     
@@ -16,8 +14,12 @@ const getMenu = async () => {
 
     let items = Array.isArray(data) ? data : data.items;
 
+    // const dipContainer = document.createElement('div')
+    // dipContainer.classList.add('dip-container')
+
     if (Array.isArray(items)) {
         items.forEach((item, index) => {
+            
             
             const menuButton = document.createElement('button');
             menuButton.id = "menu";
@@ -31,7 +33,7 @@ const getMenu = async () => {
             menuButton.addEventListener('click', () => {
                 pickItem(item);
             })
-
+            
             
             if (item.type === 'wonton') {
                 
@@ -49,21 +51,23 @@ const getMenu = async () => {
                 menuButton.appendChild(foodDescription);
 
                 foodElement.appendChild(menuButton)
+
+
             }
             
             else if (item.type === 'dip') {
                 const sauceSection = document.createElement('p');
                 //sauceSection.id = item.id;
                 sauceSection.innerText = item.name; 
-                sauceSection.classList.add('dip-sauce') //kan styla denna i css
+                sauceSection.classList.add('dip-sauce')
+
+                // dipContainer.appendChild(sauceSection);
                 
-                //lägga in namn på såserna här
                 sauceSection.addEventListener('click', () => {
                     pickItem(item);
                 })
 
-                const sauceContainer = document.getElementById('sauce-section')
-                sauceContainer.appendChild(sauceSection)
+                
             }
             
             else if (item.type === 'drink') {
@@ -77,10 +81,10 @@ const getMenu = async () => {
 
                 const drinkContainer = document.getElementById('drink-section')
                 drinkContainer.appendChild(drink)
+                
             }
-
-        
         });
+        
     } else {
         console.error('sorry, error', items);
     }
