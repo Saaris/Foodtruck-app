@@ -13,7 +13,7 @@
 <body>
     
     <!-- menydelen -->
-    <section id="menu-screen">
+    <section id="menu-screen" class="hidden">
     <section id="menu-font">
     <h1>MENY</h1>
         <button id="api-button"></button>
@@ -43,31 +43,31 @@
             </div>
         </section>
 
-        <section id="recieve-order" >
+        <section id="recieve-order" class="hidden">
             <img src="Image/wonton.png" alt="foodbox-image">
             <div id="show-info-order">
             <h2>DINA WONTONS TILLAGAS!</h2>
             <p>ETA 5 MIN</p>
             <p class="order-id"></p>
             </div>
-            <button id="see-receit-button">SE KVITTO</button>
+            <button id="see-receipt-button">SE KVITTO</button>
             <button id="new-order-button">GÖR EN NY BESTÄLLNING</button>
         </section>
         
         <!-- kvittodelen -->
-    <section id="receit-section">
-        <div id="receit-box">
-        <div id="receit-id-box">KVITTO
+    <section id="receipt-section" class="hidden">
+        <div id="receipt-box">
+        <div id="receipt-id-box">KVITTO
             <p>kvitto id visas här</p>
         </div>
         
         <section class="total-section">
-            <div class="total-show-receit">
-                <div class="receit-totalprice-section">
-                <p class="receit-total">TOTALT</p>
-                <p class="receit-total-price">SEK</p>
+            <div class="total-show-receipt">
+                <div class="receipt-totalprice-section">
+                <p class="receipt-total">TOTALT</p>
+                <p class="receipt-total-price">SEK</p>
                 </div>
-                <p class="receit-moms">inkl 20% moms</p>
+                <p class="receipt-moms">inkl 20% moms</p>
             </div>
            
         </section>

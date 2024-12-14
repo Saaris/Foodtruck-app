@@ -281,6 +281,7 @@ div {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    /* width: 100%; */
 }
 #new-order-button {
     background-color: rgb(45, 45, 45);
@@ -293,9 +294,12 @@ div {
     padding: 1em;
     font-weight: bold;
     margin: 1em;
+}
+#new-order-button:hover{
+    cursor: pointer;
 
 }
-#see-receit-button{
+#see-receipt-button{
     width: 100%;
     font-size: 26px;
     color: lightgrey;
@@ -307,8 +311,12 @@ div {
     padding: 1em;
     margin: 1em;
     font-weight: bold;
-   
 }
+#see-receipt-button:hover{
+    cursor: pointer;
+}
+   
+
 #show-info-order{
     display: flex;
     flex-direction: column;
@@ -322,12 +330,12 @@ h2 {
 img {
     width: 100%;
 }
-#receit {
+#receipt {
     background-color: #605858;
     width: 100%;
     
 }
-#receit-box {
+#receipt-box {
     background-color: #EEEEEE;
     width: 80%;
     display: flex;
@@ -340,7 +348,7 @@ img {
     
 
 }
-#receit-id-box {
+#receipt-id-box {
     padding: 1em;
     background-color: #EEEEEE;
     display: flex;
@@ -352,20 +360,20 @@ img {
     
 
 }
-#receit-box p {
+#receipt-box p {
     font-size: 28px;
     margin-top: 0;
    
 }
-.total-show-receit {
+.total-show-receipt {
     background-color: lightgrey;
 }
-.receit-moms {
+.receipt-moms {
     font-size: 22px;
     padding: 0.2em;
     margin: 0;
 }
-#receit-section {
+#receipt-section {
     width: 100%;
     background-color: #605858;
     display: flex;
@@ -377,15 +385,15 @@ img {
     background-color: lightgrey;
     width: 100%;
 }
-.receit-total-price {
+.receipt-total-price {
     padding: 0.5em;
 }
-.receit-total {
+.receipt-total {
     margin: 0;
     padding: 0.2em;
     
 }
-.receit-totalprice-section {
+.receipt-totalprice-section {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -436,12 +444,12 @@ img {
         padding: 10px; 
     }
 
-    #receit-box {
+    #receipt-box {
         width: 90%; 
         font-size: 24px; 
     }
 
-    #new-order-button, #see-receit-button {
+    #new-order-button, #see-receipt-button {
         font-size: 22px; 
     }
 

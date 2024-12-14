@@ -1,7 +1,9 @@
 
 import { apiKey, url, tenantId } from "./constants.js"
 import {showCart, cart} from "./cart.js";
-import { hideOrderScreen, showMenuScreen } from "./hide-show-functions.js";
+import { hideOrderScreen, showOrderScreen, showReceiptScreen, hideReceiptScreen,
+    showRecieveOrderScreen, hideRecieveOrderScreen } from "./hide-show-functions.js"
+
 const orderButton = document.querySelector('.material-symbols-outlined')
 
 orderButton.addEventListener('click', showCart);
@@ -66,11 +68,11 @@ payButton.addEventListener('click', () => {
     let data = await response.json();
     console.log(data);  
 }
-orderElement.appendChild(showCart); {
+recieveOrderScreenElements.appendChild(showCart); {
 
 
 }
-// recieveOrder()
+ //recieveOrder()
 
 
 
@@ -78,8 +80,10 @@ const backToMenu = document.getElementById('cart-button')
 backToMenu.addEventListener('click', () => {
     cart.length = 0;
     showCart()
-    document.querySelector('#cart').classList.add('hidden') 
+    document.querySelector('#cart-section').classList.add('hidden') 
     document.querySelector('#menu-screen').classList.remove('hidden')
+    // document.querySelector('#recieve-order-section').classList.add('hidden')
+    // document.querySelector('#receipt-section').classList.add('hidden')
     
 console.log('tillbaka till meny')
 })

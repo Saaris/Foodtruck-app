@@ -1,6 +1,5 @@
-export { hideMenuScreen, showMenuScreen, hideOrderScreen, showOrderScreen, showReceitScreen, hideReceitScreen,
-    showRecieveOrderScreen, hideRecieveOrderScreen
-}
+export { hideMenuScreen, showMenuScreen, hideOrderScreen, showOrderScreen, showReceiptScreen, hideReceiptScreen,
+    showRecieveOrderScreen, hideRecieveOrderScreen }
 
 function hideMenuScreen() {
     let menuScreenElements = document.querySelectorAll('#menu-screen *');
@@ -46,16 +45,16 @@ function showRecieveOrderScreen() {
 }
 
 
-function hideReceitScreen() {
-    let receitScreenElements = document.querySelectorAll('#receit-section *');
-    receitScreenElements.forEach(function(element) {
+function hideReceiptScreen() {
+    let receiptScreenElements = document.querySelectorAll('#receipt-section *');
+    receiptScreenElements.forEach(function(element) {
         element.setAttribute('hidden', true);
     });
 }
 
-function showReceitScreen() {
-    let receitScreenElements = document.querySelectorAll('#receit-section *');
-    receitScreenElements.forEach(function(element) {
+function showReceiptScreen() {
+    let receiptScreenElements = document.querySelectorAll('#receipt-section *');
+    receiptScreenElements.forEach(function(element) {
         element.removeAttribute('hidden');
     });
 }
