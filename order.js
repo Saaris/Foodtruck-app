@@ -4,7 +4,7 @@ import {showCart, cart} from "./cart.js";
 import { hideOrderScreen, showOrderScreen, showReceiptScreen, hideReceiptScreen,
     showRecieveOrderScreen, hideRecieveOrderScreen } from "./hide-show-functions.js"
 
-const orderButton = document.querySelector('.material-symbols-outlined')
+const orderButton = document.getElementById('menu-button')
 
 orderButton.addEventListener('click', showCart);
 
@@ -68,22 +68,19 @@ payButton.addEventListener('click', () => {
     let data = await response.json();
     console.log(data);  
 }
-recieveOrderScreenElements.appendChild(showCart); {
-
-
-}
+// orderElement.appendChild(showCart); 
  //recieveOrder()
 
 
 
-const backToMenu = document.getElementById('cart-button')
-backToMenu.addEventListener('click', () => {
-    cart.length = 0;
-    showCart()
-    document.querySelector('#cart-section').classList.add('hidden') 
-    document.querySelector('#menu-screen').classList.remove('hidden')
-    // document.querySelector('#recieve-order-section').classList.add('hidden')
-    // document.querySelector('#receipt-section').classList.add('hidden')
+ const backToMenu = document.getElementById('cart-button')
+ backToMenu.addEventListener('click', () => {
+     cart.length = 0;
+     showCart()
+     document.querySelector('#cart-section').classList.add('hidden') 
+     document.querySelector('#menu-screen').classList.remove('hidden')
+     console.log(document.querySelector('#cart-section'));
+    console.log(document.querySelector('#menu-screen'));
     
 console.log('tillbaka till meny')
 })

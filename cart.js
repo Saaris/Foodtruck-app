@@ -1,4 +1,4 @@
-const cartItem = document.querySelector("#cart-section")
+const cartItem = document.getElementById("cart-section")
 const cartItemsElement = document.querySelector("#cart-items")
 export const cart = []
 

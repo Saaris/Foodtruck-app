@@ -4,7 +4,7 @@ export { hideMenuScreen, showMenuScreen, hideOrderScreen, showOrderScreen, showR
 function hideMenuScreen() {
     let menuScreenElements = document.querySelectorAll('#menu-screen *');
     menuScreenElements.forEach(function(element) {
-        element.setAttribute('hidden', true);
+        element.setAttribute('hidden', '');
     });
 }
 
@@ -19,7 +19,7 @@ function showMenuScreen() {
 function hideOrderScreen() {
     let orderScreenElements = document.querySelectorAll('#cart-section *');
     orderScreenElements.forEach(function(element) {
-        element.setAttribute('hidden', true);
+        element.setAttribute('hidden', '');
     });
 }
 
@@ -33,7 +33,7 @@ function showOrderScreen() {
 function hideRecieveOrderScreen() {
     let recieveOrderScreenElements = document.querySelectorAll('#recieve-order-section *');
     recieveOrderScreenElements.forEach(function(element) {
-        element.setAttribute('hidden', true);
+        element.setAttribute('hidden', '');
     });
 }
 
@@ -48,7 +48,7 @@ function showRecieveOrderScreen() {
 function hideReceiptScreen() {
     let receiptScreenElements = document.querySelectorAll('#receipt-section *');
     receiptScreenElements.forEach(function(element) {
-        element.setAttribute('hidden', true);
+        element.setAttribute('hidden', '');
     });
 }
 
