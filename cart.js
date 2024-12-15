@@ -16,7 +16,7 @@ export const showCart = () => {
             chosenItems.push(item.name)
         
         const itemElement = document.createElement("div")
-        const quantity = cart.filter(item => item.name === item.name).length;
+        const quantity = cart.filter(i => i.name === item.name).length;
         const totalItemPrice = (item.price * quantity)
         
         itemElement.classList.add('item')
