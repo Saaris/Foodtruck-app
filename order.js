@@ -79,8 +79,8 @@ payButton.addEventListener('click', () => {
      showCart()
      document.querySelector('#cart-section').classList.add('hidden') 
      document.querySelector('#menu-screen').classList.remove('hidden')
-     console.log(document.querySelector('#cart-section'));
-    console.log(document.querySelector('#menu-screen'));
+     
+    
     
 console.log('tillbaka till meny')
 })

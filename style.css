@@ -58,7 +58,7 @@ h1 {
     background-color: rgb(52, 150, 126);
 
 }
-.material-symbols-outlined {
+#menu-button {
     background-color: rgb(205, 202, 202);
     width: 60px;
     height: 60px;
@@ -274,14 +274,14 @@ div {
     font-weight: bold;
 }
 
-#recieve-order{
+#recieve-order-section{
     color: white;
     background-color: #605858;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* width: 100%; */
+    width: 100%;
 }
 #new-order-button {
     background-color: rgb(45, 45, 45);
@@ -406,7 +406,7 @@ img {
         font-size: 24px; 
     }
 
-    .material-symbols-outlined {
+    #menu-button {
         width: 50px;
         height: 50px;
     }
