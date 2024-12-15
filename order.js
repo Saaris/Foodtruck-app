@@ -26,7 +26,10 @@ const startOrder = async () => {
             body: JSON.stringify(bodyToSend) 
         })
         if (response.ok) {
-            const data = await response.json;
+            const latestOrder = await response.json();
+            console.log(latestOrder)
+            const receiptSection = document.querySelector('#receipt-id-box p')
+            receiptSection.innerText = latestOrder.id
             console.log('beställning skickad:', bodyToSend);
             cart.length = 0;
         } else {
@@ -41,6 +44,24 @@ const payButton = document.querySelector('.pay-button');
 
 payButton.addEventListener('click', () => {
     startOrder();
+    const cartSection = document.getElementById('cart-section')
+    cartSection.classList.add('hidden')
+    
+    const menuScreenSection = document.getElementById('menu-screen')
+    menuScreenSection.classList.add('hidden')
+
+    toggleElementDisplay(cartSection, false)
+    
+    const recieveOrderSection = document.getElementById('recieve-order-section')
+    recieveOrderSection.classList.remove('hidden')
+
+    toggleElementDisplay(recieveOrderSection, true)
+    
+    const receiptSection= document.getElementById('receipt-section')
+    receiptSection.classList.add('hidden')
+    
+    toggleElementDisplay(receiptSection, true)
+
     console.log("Ordern har startat!")
     recieveOrder()
     //här lägger du i GET request functionen

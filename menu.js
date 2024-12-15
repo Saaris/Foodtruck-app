@@ -56,32 +56,32 @@ const getMenu = async () => {
             }
             
             else if (item.type === 'dip') {
-                const sauceSection = document.createElement('p');
+                const SaucesContainer = document.getElementById('saucesContainer')
+                const sauce = document.createElement('p');
                 //sauceSection.id = item.id;
-                sauceSection.innerText = item.name; 
-                sauceSection.classList.add('dip-sauce')
-
-                // dipContainer.appendChild(sauceSection);
+                sauce.innerText = item.name; 
+                sauce.classList.add('dip-sauce')
                 
-                sauceSection.addEventListener('click', () => {
+                sauce.addEventListener('click', () => {
                     pickItem(item);
                 })
-
+                SaucesContainer.appendChild(sauce);
                 
             }
             
             else if (item.type === 'drink') {
-                const drink = document.createElement('p');
+                
+                const drinksContainer = document.getElementById('drinksContainer')
                 //drink.id = item.id;
+                const drink = document.createElement('p');
                 drink.innerText = item.name;  
                 drink.classList.add('drinks')
+                
                 drink.addEventListener('click', () => {
                     pickItem(item);
                 })
-
-                const drinkContainer = document.getElementById('drink-section')
-                drinkContainer.appendChild(drink)
-                
+                //const drinkContainer = document.getElementById('drink-section')
+                drinksContainer.appendChild(drink)
             }
         });
         
