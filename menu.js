@@ -95,8 +95,8 @@ const getMenu = async () => {
 getMenu();
 
 
-export function pickItem(item) {
+function pickItem(item) {
     cart.push(item)
     console.log(`Du klickade på: ${item.name}`);
 }
-            
+        
