@@ -1,7 +1,9 @@
 import { apiKey, url } from "./constants.js"
 import {cart, showCart} from "./cart.js";
 
-const foodElement = document.querySelector('.menu-sections');
+const foodElement = document.querySelector('.food-section');
+
+
 
 const getMenu = async () => {
     

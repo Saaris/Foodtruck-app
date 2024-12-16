@@ -16,8 +16,13 @@ export const showCart = () => {
             chosenItems.push(item.name)
         
         const itemElement = document.createElement("div")
-        const quantity = cart.filter(i => i.name === item.name).length;
+        const quantity = cart.filter(i => i.name === item.name).length; //i är antalet, inte samma som item
         const totalItemPrice = (item.price * quantity)
+        
+        //const allTotalPrice = (totalItemPrice * quantity)
+        //const allTotalElement = document.querySelector('total-price')
+        //allTotalElement.textContent =` ${allTotalPrice} SEK`
+        
         
         itemElement.classList.add('item')
 
@@ -28,7 +33,7 @@ export const showCart = () => {
 
        
         const priceElement = document.createElement('span')
-        priceElement.textContent = `..............................${totalItemPrice}SEK`
+        priceElement.textContent = `..........................${totalItemPrice}SEK`
         itemElement.appendChild(priceElement) 
         
         const namePriceContainer = document.createElement('div')
@@ -79,7 +84,9 @@ export const showCart = () => {
         cartItemsElement.appendChild(itemElement)
 
     })
-    
+       
     }
+    
+
   
 

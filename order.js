@@ -1,12 +1,14 @@
 
 import { apiKey, url, tenantId } from "./constants.js"
 import {showCart, cart} from "./cart.js";
-import { hideOrderScreen, showOrderScreen, showReceiptScreen, hideReceiptScreen,
-    showRecieveOrderScreen, hideRecieveOrderScreen } from "./hide-show-functions.js"
+// import { hideOrderScreen, showOrderScreen, showReceiptScreen, hideReceiptScreen,
+//     showRecieveOrderScreen, hideRecieveOrderScreen } from "./hide-show-functions.js"
 
-const orderButton = document.getElementById('menu-button')
+const orderButton = document.getElementById('order-button')
 
 orderButton.addEventListener('click', showCart);
+
+
 
 
 const startOrder = async () => {
@@ -27,8 +29,8 @@ const startOrder = async () => {
         })
         if (response.ok) {
             const latestOrder = await response.json();
-            console.log(latestOrder)
-            const receiptSection = document.querySelector('#receipt-id-box p')
+            console.log('id senaste ordern',latestOrder)
+            const receiptSection = document.querySelector('id-show')
             receiptSection.innerText = latestOrder.id
             console.log('beställning skickad:', bodyToSend);
             cart.length = 0;
@@ -40,6 +42,19 @@ const startOrder = async () => {
     }
 };
 
+
+
+function toggleElementDisplay(element, hide) {
+    if (hide) {
+        element.classList.remove('hidden')
+    }
+    else {
+        element.classList.add('hidden')
+    }
+}
+
+
+
 const payButton = document.querySelector('.pay-button');
 
 payButton.addEventListener('click', () => {
@@ -47,20 +62,22 @@ payButton.addEventListener('click', () => {
     const cartSection = document.getElementById('cart-section')
     cartSection.classList.add('hidden')
     
-    const menuScreenSection = document.getElementById('menu-screen')
-    menuScreenSection.classList.add('hidden')
+    //const menuScreenSection = document.getElementById('menu-screen')
+    //menuScreenSection.classList.add('hidden')
 
-    toggleElementDisplay(cartSection, false)
+   //toggleElementDisplay(cartSection, false)
     
     const recieveOrderSection = document.getElementById('recieve-order-section')
+   
+    recieveOrderSection.style.display = 'block';
     recieveOrderSection.classList.remove('hidden')
 
-    toggleElementDisplay(recieveOrderSection, true)
+
+    //toggleElementDisplay(recieveOrderSection, true)
     
     const receiptSection= document.getElementById('receipt-section')
     receiptSection.classList.add('hidden')
     
-    toggleElementDisplay(receiptSection, true)
 
     console.log("Ordern har startat!")
     recieveOrder()

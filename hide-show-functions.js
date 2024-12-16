@@ -1,5 +1,5 @@
-export { hideMenuScreen, showMenuScreen, hideOrderScreen, showOrderScreen, showReceiptScreen, hideReceiptScreen,
-    showRecieveOrderScreen, hideRecieveOrderScreen }
+// export { hideMenuScreen, showMenuScreen, hideOrderScreen, showOrderScreen, showReceiptScreen, hideReceiptScreen,
+//     showRecieveOrderScreen, hideRecieveOrderScreen }
 
 function hideMenuScreen() {
     let menuScreenElements = document.querySelectorAll('#menu-screen *');

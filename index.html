@@ -9,19 +9,21 @@
     <link rel="stylesheet" href="style.css">
     <script type="module" src="menu.js"></script>
     <script type="module" src="order.js"></script>
+    
 </head>
 <body>
     
     <!-- menydelen -->
     <section id="menu-screen">
     <section id="menu-font">
+        <button class="material-symbols-outlined" id="order-button">shopping_bag</button>
     <h1>MENY</h1>
         <button id="api-button"></button>
         <button id="tenant-button"></button>
-        <button class="material-symbols-outlined" id="menu-button">shopping_bag</button>
+        
     </section>
-
-    <section class="menu-sections"></section>
+    
+    <section class="food-section"></section>
 
         <section id="sauce-section">
             <p class="show-sauce-price">DIPSÅS....................................19SEK</p>
@@ -39,13 +41,15 @@
             <div id="cart-items"></div>
             <div class="total">TOTALT
                 <p class="moms">Inkl 20% moms</p>
+                <p class="toal-price"></p>
+
             </div>
             <div class="pay-section">
                 <button class="pay-button">TAKE MY MONEY!</button>
             </div>
         </section>
 
-        <section id="recieve-order-section" class="recieve-order hidden">
+        <section id="recieve-order-section" class="hidden">
             <img src="Image/wonton.png" alt="foodbox-image">
             <div id="show-info-order">
             <h2>DINA WONTONS TILLAGAS!</h2>
@@ -60,16 +64,15 @@
     <section id="receipt-section" class="hidden">
         <div id="receipt-box">
         <div id="receipt-id-box">KVITTO
-            <p>kvitto id visas här</p>
+            <p class="id-show">kvitto id visas här</p>
         </div>
         
         <section class="total-section">
             <div class="total-show-receipt">
                 <div class="receipt-totalprice-section">
-                <p class="receipt-total">TOTALT</p>
+                <button class="receipt-total">TOTALT<span class="receipt-total-price">SEK</span></button>
                 <p class="receipt-moms">inkl 20% moms</p>
                 </div>
-                <p class="receipt-total-price">SEK</p>
             </div>
            
         </section>
