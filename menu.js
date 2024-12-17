@@ -68,6 +68,11 @@ const getMenu = async () => {
             }
             
             else if (item.type === 'dip') {
+
+                const saucePrice = document.getElementById('sauce-price');
+                saucePrice.classList.add('show-sauce-price');
+                saucePrice.innerText = `DIPSÅS..............................${item.price} SEK`;
+
                 const SaucesContainer = document.getElementById('saucesContainer')
                 const sauce = document.createElement('p');
                 //sauceSection.id = item.id;
@@ -77,11 +82,15 @@ const getMenu = async () => {
                 sauce.addEventListener('click', () => {
                     pickItem(item);
                 })
-                SaucesContainer.appendChild(sauce);
+                SaucesContainer.appendChild(sauce, saucePrice);
                 
             }
             
             else if (item.type === 'drink') {
+
+                const drinkPrice = document.getElementById('drinks-price');
+                drinkPrice.classList.add('show-sauce-price');
+                drinkPrice.innerText = `DRICKA..............................${item.price} SEK`;
                 
                 const drinksContainer = document.getElementById('drinksContainer')
                 //drink.id = item.id;
@@ -93,7 +102,7 @@ const getMenu = async () => {
                     pickItem(item);
                 })
                 //const drinkContainer = document.getElementById('drink-section')
-                drinksContainer.appendChild(drink)
+                drinksContainer.appendChild(drink, drinkPrice)
             }
         });
         
@@ -107,9 +116,17 @@ getMenu();
 
 
 function pickItem(item) {
-    cart.push(item)
+    cart.push(item);
     console.log(`Du klickade på: ${item.name}`);
-
-    
+    orderCount();
+    let showOrderCount = document.getElementById("show-order-count");
+    showOrderCount.style.visibility = "visible";
 }
-        
+
+export function orderCount() {
+    const orderButtonCount = document.getElementById('show-order-count');
+    if (cart.length > 0) {
+        const itemCount = cart.length;
+        orderButtonCount.textContent = `${itemCount}`; 
+    }
+}

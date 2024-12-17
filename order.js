@@ -2,6 +2,7 @@
 import { apiKey, url, tenantId } from "./constants.js"
 import {showCart, cart} from "./cart.js";
 import { showCartScreen, showMenu, showRecieveOrder } from "./hide-show-functions.js";
+import { resetCount } from "./order-in-cart.js";
 
 const orderButton = document.getElementById('order-button')
 
@@ -49,12 +50,6 @@ const startOrder = async () => {
 
 };
 
-
-
-
-
-
-
 const payButton = document.querySelector('.pay-button');
 
 payButton.addEventListener('click', () => {
@@ -66,13 +61,10 @@ payButton.addEventListener('click', () => {
     //här lägger du i GET request functionen
 });
 
-
-
 //Detta står i API:
 // curl -X 'GET' \
 //   'https://fdnzawlcf6.execute-api.eu-north-1.amazonaws.com/%27q7jz%27/orders' \
 //   -H 'accept: application/json'
-
 
 
  const recieveOrder = async () => {
@@ -98,6 +90,7 @@ payButton.addEventListener('click', () => {
      cart.length = 0;
      showCart()
      showMenu()
+     resetCount()
     
 console.log('tillbaka till meny')
 })
@@ -107,6 +100,7 @@ firstNewOrder.addEventListener('click', () => {
      cart.length = 0;
      showCart()
      showMenu()
+     resetCount()
     
 console.log('tillbaka till meny från recieve-order vyn')
 })
@@ -116,6 +110,7 @@ secondNewOrder.addEventListener('click', () => {
      cart.length = 0;
      showCart()
      showMenu()
+     resetCount()
     
 console.log('tillbaka till meny från kvittovyn')
 })
