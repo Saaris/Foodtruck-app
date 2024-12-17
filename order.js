@@ -36,9 +36,11 @@ const startOrder = async () => {
         })
         if (response.ok) {
             const latestOrder = await response.json();
-            console.log('id senaste ordern',latestOrder)
-            const receiptSection = document.querySelector('.order-id')
-            receiptSection.innerText = latestOrder.id
+            console.log('id senaste ordern', latestOrder)
+            const receiptSections = document.querySelectorAll('.order-id')
+            receiptSections.forEach(section => {
+                section.innerText = latestOrder.order.id;
+            })
             console.log('beställning skickad:', bodyToSend);
             cart.length = 0;
         } else {
