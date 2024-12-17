@@ -46,7 +46,7 @@
     }
 
     function showReceipt() {
-        console.log('showreceoit körs')
+        console.log('showreceipt körs')
         cartSection.classList.add('hidden')
         menuScreenSection.classList.add('hidden')
         receiptSection.classList.remove('hidden')

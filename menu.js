@@ -52,7 +52,7 @@ const getMenu = async () => {
                 const foodIngredient = document.createElement('p');
                 //foodIngredient.id = "food-ingredient";
                 foodIngredient.classList.add('ingredient');
-                foodIngredient.innerText = item.ingredients;
+                foodIngredient.innerText = item.ingredients.join(', ');
 
                 // const foodDescription = document.createElement('p')
                 // foodDescription.classList.add('description');

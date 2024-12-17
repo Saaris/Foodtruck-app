@@ -1,7 +1,7 @@
 
 import { apiKey, url, tenantId } from "./constants.js"
 import {showCart, cart} from "./cart.js";
-import { showCartScreen, showMenu } from "./hide-show-functions.js";
+import { showCartScreen, showMenu, showRecieveOrder } from "./hide-show-functions.js";
 
 const orderButton = document.getElementById('order-button')
 
@@ -59,6 +59,7 @@ const payButton = document.querySelector('.pay-button');
 
 payButton.addEventListener('click', () => {
     startOrder();
+    showRecieveOrder()
 
     console.log("Ordern har startat!")
     recieveOrder()
@@ -99,4 +100,22 @@ payButton.addEventListener('click', () => {
      showMenu()
     
 console.log('tillbaka till meny')
+})
+
+const firstNewOrder = document.getElementById('first-neworder-button')
+firstNewOrder.addEventListener('click', () => {
+     cart.length = 0;
+     showCart()
+     showMenu()
+    
+console.log('tillbaka till meny från recieve-order vyn')
+})
+
+const secondNewOrder  = document.getElementById('second-neworder-button')
+secondNewOrder.addEventListener('click', () => {
+     cart.length = 0;
+     showCart()
+     showMenu()
+    
+console.log('tillbaka till meny från kvittovyn')
 })
