@@ -1,6 +1,5 @@
 body {
     font-family: "Fira Sans", sans-serif;
-    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -24,10 +23,11 @@ h1 {
     padding-top: 1em;
     margin: 0;
     color: white;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
 }
 .menu-box{
     text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
-    width: 100%;
+    width: 94%;
     background-color: #605858;
     color: white;
     display: flex;
@@ -96,11 +96,11 @@ h1 {
 
 
 #cart-button {
-    background-color: rgb(205, 202, 202);
+    background-color: rgb(223, 223, 223);
     width: 60px;
     height: 60px;
     border-radius: 50%; 
-    margin: 0.5em;
+    margin: 0.3em;
     padding: 0.5em;
     border: rgb(205, 202, 202);
     float: right;
@@ -118,7 +118,10 @@ h1 {
 }
 
 h4{
-   padding-left: 0.3em;
+    margin-block-start: 0.7em;
+    margin-block-end: 0.7em;
+    padding-left: 0.3em;
+    font-size: 18px;
 }
 
 .ingredient {
@@ -144,23 +147,21 @@ h4{
     background-color: #605858;
     font-size: 22px;
     display: flex;
-    flex-direction: column;
-    gap: 10px; 
+    flex-direction: column; 
     color: white;
-    width: 100%;
-    margin-top: 1em;
-    margin-bottom: 1em;
+    width: 94%;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
     border-radius: 8px;
     flex: 1;
-    align-items: center;
-    
-    
+    text-align: justify;
 
 }
+
 #saucesContainer {
     display: grid;
     grid-template-columns: auto 1fr 1fr;
-    gap: 0.2em;
+    gap: 0.8em;
     margin: 0;
     padding: 0.8em;
     
@@ -168,14 +169,20 @@ h4{
 }
 
 .dip-sauce {
-    padding: 0.3em;
-    margin: 0.3em;
+    max-height: fit-content;
+    min-height: 30px;
+    max-width: 100px;
+    min-width: 40px;
+    padding: 0;
+    margin: 0;
+    gap: 0.8em;
     background-color: grey;
-    border-radius: 6px;
-    font-size: 18px;
+    border-radius: 2px;
+    font-size: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
+    white-space: nowrap;
 }
 .dip-sauce:hover{
     background-color: rgb(42, 38, 35);
@@ -197,33 +204,38 @@ h4{
     font-size: 22px;
     display: flex;
     flex-direction: column;
-    gap: 10px; 
     color: white;
-    width: 100%;
-    margin-top: 0.5em;
+    width: 94%;
     margin-bottom: 2em;
     border-radius: 8px;
     flex: 1;
     align-items: center;
+    
 }
 
 #drinksContainer {
     display: grid;
     grid-template-columns: auto 1fr 1fr;
-    gap: 0.2em;
+    gap: 0.6em;
     margin: 0;
     padding: 0.8em;
 
 }
 .drinks {
-    padding: 0.3em;
-    margin: 0.3em;
+    max-height: fit-content;
+    min-height: 30px;
+    max-width: 110px;
+    min-width: 50px;
+    padding: 0.2em;
+    margin: 0;
+    gap: 0.8em;
     background-color: grey;
-    border-radius: 6px;
-    font-size: 18px;
+    border-radius: 2px;
+    font-size: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
+    white-space: nowrap;
 
 }
 
@@ -232,13 +244,21 @@ h4{
     background-color: rgb(42, 38, 35);
     cursor: pointer;
 }
+.sauce-drink {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
 .food-section {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 div {
-    font-size: 20px;
+    font-size: 18px;
+    font-weight: bold;
 
 
 }
@@ -250,7 +270,7 @@ div {
 
 #cart-section {
     width: 96%;
-    background-color: rgb(205, 202, 202);
+    background-color: rgb(223, 223, 223);
     padding: 0.5em;
     /* display: flex;
     flex-direction: column; */
@@ -302,46 +322,54 @@ div {
 
 }
 .total {
-    background-color: rgb(213, 214, 215);
-    width: 86%;
-    font-size: 24px;
+    background-color: rgb(205, 205, 205);
+    border: rgb(205, 205, 205);
+    width: 90%;
     font-weight: bold;
-    align-items: center;
     border-radius: 6px;
-    align-items: center;
-    padding: 0.2em;
-    margin-left: 0.8em;
+    margin-left: 1em;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
     
- }
+}
+.total-pay {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    
 
- .show-price {
+}
+
+
+.show-price {
     text-align: left;
     width: 100%;
     font-size: 20px; 
     font-weight: bold;  
-  }
+}
 
 .moms {
-    font-size: 16px;
+    font-size: 14px;
     margin: 0.2em;
- }
+}
 
 .minus-button{
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     font-size: 26px;
-    background-color: lightgrey;
-    border: lightgrey;
+    background-color: rgb(189, 187, 187);
+    border: rgb(189, 187, 187);
    
 }
 .plus-button{
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
-    background-color: lightgrey;
+    background-color: rgb(189, 187, 187);
     font-size: 26px;
-    border: lightgrey;
+    border: rgb(189, 187, 187);
     
 }
 .plus-button:hover {
@@ -357,6 +385,7 @@ div {
     flex-direction: row;
     align-items: center;
     width: 290px;
+    height: 80px;
 }
   
 #city {
@@ -371,15 +400,18 @@ div {
 .show-sauce-price {
     font-size: 20px;
     font-weight: bold;
-    padding: 0.5em;
-    margin: 0.2em;
+    padding-top: 1em;
+    padding-left: 1em;
+    margin: 0;
 }
 
-.drink-price {
+.show-drink-price {
     font-size: 20px;
     font-weight: bold;
-    padding: 0.5em;
-    margin: 0.2em;
+    padding-top: 1em;
+    padding-right: 2.7em;
+    padding-left: 1em;
+    margin: 0;
 }
 #recieve-order-section {
     background-color: #605858;
@@ -518,6 +550,10 @@ img {
 .receipt-total-price {
     padding: 0.5em;
     font-size: 16px;
+}
+.total-price {
+    margin: 0.2em;
+    font-size: 18px;
 }
 
 .receipt-total {

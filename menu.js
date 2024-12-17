@@ -89,7 +89,7 @@ const getMenu = async () => {
             else if (item.type === 'drink') {
 
                 const drinkPrice = document.getElementById('drinks-price');
-                drinkPrice.classList.add('show-sauce-price');
+                drinkPrice.classList.add('show-drink-price');
                 drinkPrice.innerText = `DRICKA..............................${item.price} SEK`;
                 
                 const drinksContainer = document.getElementById('drinksContainer')

@@ -23,10 +23,6 @@ export const showCart = () => {
         const quantity = cart.filter(i => i.name === item.name).length; //i är antalet, inte samma som item
         const totalItemPrice = (item.price * quantity)
     
-        // const allTotal = (list.length.totalItemPrice)
-        // const allTotalElement = document.querySelector('.receipt-total-price')
-        // allTotalElement.textContent = `${allTotal}`
-    
 
         itemElement.classList.add('item')
 
@@ -88,6 +84,7 @@ export const showCart = () => {
         cartItemsElement.appendChild(itemElement)
 
     })
+    //uppdatera totalpriset 
    
     }
     
