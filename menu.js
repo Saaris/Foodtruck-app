@@ -1,13 +1,13 @@
 import { apiKey, url } from "./constants.js"
 import {cart, showCart} from "./cart.js";
-import { showMenuScreen, hideRecieveOrderScreen, showReceiptScreen, hideReceiptScreen, hideCartScreen } from "./hide-show-functions.js";
+import { showMenu, showCartScreen, showReceipt, showRecieveOrder} from "./hide-show-functions.js"
 
 
-document.addEventListener('DOMContentLoaded', function() {
-    
-    hideRecieveOrderScreen()
-    hideReceiptScreen(); 
-});
+
+// document.addEventListener('DOMContentLoaded', function() {
+//     showMenu();
+//     console.log('showMenu körs!') 
+// })
 
 
 const foodElement = document.querySelector('.food-section');
@@ -54,13 +54,13 @@ const getMenu = async () => {
                 foodIngredient.classList.add('ingredient');
                 foodIngredient.innerText = item.ingredients;
 
-                const foodDescription = document.createElement('p')
-                foodDescription.classList.add('description');
-                foodDescription.innerText = item.description;
+                // const foodDescription = document.createElement('p')
+                // foodDescription.classList.add('description');
+                // foodDescription.innerText = item.description;
                
                 menuButton.appendChild(price);
                 menuButton.appendChild(foodIngredient);
-                menuButton.appendChild(foodDescription);
+                // menuButton.appendChild(foodDescription);
 
                 foodElement.appendChild(menuButton)
 
@@ -109,6 +109,7 @@ getMenu();
 function pickItem(item) {
     cart.push(item)
     console.log(`Du klickade på: ${item.name}`);
+
     
 }
         

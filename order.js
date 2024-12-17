@@ -1,14 +1,19 @@
 
 import { apiKey, url, tenantId } from "./constants.js"
 import {showCart, cart} from "./cart.js";
-import { hideCartScreen, showCartScreen, showReceiptScreen, hideReceiptScreen,
-     showRecieveOrderScreen, hideRecieveOrderScreen, 
-     showMenuScreen,
-     hideMenuScreen} from "./hide-show-functions.js"
+import { showCartScreen, showMenu } from "./hide-show-functions.js";
 
 const orderButton = document.getElementById('order-button')
 
-orderButton.addEventListener('click', showCart,);
+orderButton.addEventListener('click', () => {
+    console.log('showCart-screen körs')
+    showCart()
+    showCartScreen()
+    //console.log('showcart-screen körs')
+} 
+    
+    
+);
 
 
 const startOrder = async () => {
@@ -41,6 +46,7 @@ const startOrder = async () => {
     } catch (error) {
         console.log('fel:', error);
     }
+
 };
 
 
@@ -53,27 +59,6 @@ const payButton = document.querySelector('.pay-button');
 
 payButton.addEventListener('click', () => {
     startOrder();
-
-    showRecieveOrderScreen()
-//     const cartSection = document.getElementById('cart-section')
-//     cartSection.classList.add('hidden')
-    
-//     //const menuScreenSection = document.getElementById('menu-screen')
-//     //menuScreenSection.classList.add('hidden')
-
-//    //toggleElementDisplay(cartSection, false)
-    
-//     const recieveOrderSection = document.getElementById('recieve-order-section')
-   
-//     recieveOrderSection.style.display = 'block';
-//     recieveOrderSection.classList.remove('hidden')
-
-
-    //toggleElementDisplay(recieveOrderSection, true)
-    
-    // const receiptSection= document.getElementById('receipt-section')
-    // receiptSection.classList.add('hidden')
-    
 
     console.log("Ordern har startat!")
     recieveOrder()
@@ -111,11 +96,7 @@ payButton.addEventListener('click', () => {
  backToMenu.addEventListener('click', () => {
      cart.length = 0;
      showCart()
-     showMenuScreen
-     hideRecieveOrderScreen
-     hideReceiptScreen
-     
-    
+     showMenu()
     
 console.log('tillbaka till meny')
 })

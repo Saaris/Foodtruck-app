@@ -1,6 +1,6 @@
 body {
     font-family: "Fira Sans", sans-serif;
-    background-color: #489078;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -56,6 +56,7 @@ h1 {
 
 #menu-screen {
     width: 100%;
+    background-color: #489078;
     font-family: "Fira Sans", sans-serif;
 
 
@@ -76,7 +77,11 @@ h1 {
     cursor: pointer;
 
 } 
-
+#order-button-count {
+    font-size: 10px;
+    width: 20px;
+    height: 20px;
+}
 
 
 #cart-button {
@@ -87,8 +92,8 @@ h1 {
     margin: 0.5em;
     padding: 0.5em;
     border: rgb(205, 202, 202);
-    margin-left: auto;
-    font-size: 34px;
+    float: right;
+    font-size: 36px;
 
 }
 #cart-button:hover {
@@ -112,14 +117,14 @@ h4{
     padding: 0.3em;
     margin: 0;
     
-}
+/* }
 
 .description {
     font-size: 18px;
     text-align: left;
     font-style: italic;
     padding: 0.3em;
-    margin: 0.2em;
+    margin: 0.2em; */
 
 }
 
@@ -236,15 +241,17 @@ div {
     width: 96%;
     background-color: rgb(205, 202, 202);
     padding: 0.5em;
-    display: flex;
-    flex-direction: column;
-    /* position:fixed; */
+    /* display: flex;
+    flex-direction: column; */
+    /* position:fixed;  */
     
     
 }
 #cart-items {
     width: 100%;
     height:auto;
+    display: flex;
+    flex-direction: column;
 
 }
 .item {
@@ -477,10 +484,10 @@ img {
 
     width: 100%;
     background-color: #605858;
-    display: flex;
+    /* display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: column; */
 }
 
 .total-section{
@@ -587,6 +594,6 @@ img {
     } */
     
 
-/* .hidden {
+.hidden {
     display: none;
-} */
+} 

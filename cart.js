@@ -3,7 +3,8 @@ const cartItemsElement = document.querySelector("#cart-items")
 export const cart = []
 
 export const showCart = () => {
-    // cartItem.classList.remove("hidden")
+    cartItem.classList.remove("hidden")
+    console.log('showcart körs')
     cartItemsElement.textContent = "";
 
     
