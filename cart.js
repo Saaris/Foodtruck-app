@@ -3,12 +3,15 @@ const cartItemsElement = document.querySelector("#cart-items")
 export const cart = []
 
 export const showCart = () => {
-    cartItem.classList.remove("hidden")
+    // cartItem.classList.remove("hidden")
     cartItemsElement.textContent = "";
 
     
 
     const chosenItems = []
+
+
+
     cart.forEach((item) => {
         if (chosenItems.includes(item.name)) 
 
@@ -18,12 +21,12 @@ export const showCart = () => {
         const itemElement = document.createElement("div")
         const quantity = cart.filter(i => i.name === item.name).length; //i är antalet, inte samma som item
         const totalItemPrice = (item.price * quantity)
-        
-        //const allTotalPrice = (totalItemPrice * quantity)
-        //const allTotalElement = document.querySelector('total-price')
-        //allTotalElement.textContent =` ${allTotalPrice} SEK`
-        
-        
+    
+        // const allTotal = (list.length.totalItemPrice)
+        // const allTotalElement = document.querySelector('.receipt-total-price')
+        // allTotalElement.textContent = `${allTotal}`
+    
+
         itemElement.classList.add('item')
 
         const itemNameElement = document.createElement("h4")
@@ -84,7 +87,7 @@ export const showCart = () => {
         cartItemsElement.appendChild(itemElement)
 
     })
-       
+   
     }
     
 

@@ -1,11 +1,21 @@
 import { apiKey, url } from "./constants.js"
 import {cart, showCart} from "./cart.js";
+import { showMenuScreen, hideRecieveOrderScreen, showReceiptScreen, hideReceiptScreen, hideCartScreen } from "./hide-show-functions.js";
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    
+    hideRecieveOrderScreen()
+    hideReceiptScreen(); 
+});
+
 
 const foodElement = document.querySelector('.food-section');
 
 
-
 const getMenu = async () => {
+     
+
     
     let response = await fetch(`${url}/menu`, {
         headers: { "x-zocom": apiKey }
@@ -95,8 +105,10 @@ const getMenu = async () => {
 getMenu();
 
 
+
 function pickItem(item) {
     cart.push(item)
     console.log(`Du klickade på: ${item.name}`);
+    
 }
         

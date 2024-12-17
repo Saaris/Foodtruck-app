@@ -1,18 +1,19 @@
 
 import { apiKey, url, tenantId } from "./constants.js"
 import {showCart, cart} from "./cart.js";
-// import { hideOrderScreen, showOrderScreen, showReceiptScreen, hideReceiptScreen,
-//     showRecieveOrderScreen, hideRecieveOrderScreen } from "./hide-show-functions.js"
+import { hideCartScreen, showCartScreen, showReceiptScreen, hideReceiptScreen,
+     showRecieveOrderScreen, hideRecieveOrderScreen, 
+     showMenuScreen,
+     hideMenuScreen} from "./hide-show-functions.js"
 
 const orderButton = document.getElementById('order-button')
 
-orderButton.addEventListener('click', showCart);
-
-
+orderButton.addEventListener('click', showCart,);
 
 
 const startOrder = async () => {
     console.log('startOrder')
+    
    
     const bodyToSend = {
         items: [ 1, 2, 3, 4 ,5 ,6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
@@ -30,7 +31,7 @@ const startOrder = async () => {
         if (response.ok) {
             const latestOrder = await response.json();
             console.log('id senaste ordern',latestOrder)
-            const receiptSection = document.querySelector('id-show')
+            const receiptSection = document.querySelector('.order-id')
             receiptSection.innerText = latestOrder.id
             console.log('beställning skickad:', bodyToSend);
             cart.length = 0;
@@ -44,14 +45,7 @@ const startOrder = async () => {
 
 
 
-function toggleElementDisplay(element, hide) {
-    if (hide) {
-        element.classList.remove('hidden')
-    }
-    else {
-        element.classList.add('hidden')
-    }
-}
+
 
 
 
@@ -59,24 +53,26 @@ const payButton = document.querySelector('.pay-button');
 
 payButton.addEventListener('click', () => {
     startOrder();
-    const cartSection = document.getElementById('cart-section')
-    cartSection.classList.add('hidden')
-    
-    //const menuScreenSection = document.getElementById('menu-screen')
-    //menuScreenSection.classList.add('hidden')
 
-   //toggleElementDisplay(cartSection, false)
+    showRecieveOrderScreen()
+//     const cartSection = document.getElementById('cart-section')
+//     cartSection.classList.add('hidden')
     
-    const recieveOrderSection = document.getElementById('recieve-order-section')
+//     //const menuScreenSection = document.getElementById('menu-screen')
+//     //menuScreenSection.classList.add('hidden')
+
+//    //toggleElementDisplay(cartSection, false)
+    
+//     const recieveOrderSection = document.getElementById('recieve-order-section')
    
-    recieveOrderSection.style.display = 'block';
-    recieveOrderSection.classList.remove('hidden')
+//     recieveOrderSection.style.display = 'block';
+//     recieveOrderSection.classList.remove('hidden')
 
 
     //toggleElementDisplay(recieveOrderSection, true)
     
-    const receiptSection= document.getElementById('receipt-section')
-    receiptSection.classList.add('hidden')
+    // const receiptSection= document.getElementById('receipt-section')
+    // receiptSection.classList.add('hidden')
     
 
     console.log("Ordern har startat!")
@@ -115,8 +111,9 @@ payButton.addEventListener('click', () => {
  backToMenu.addEventListener('click', () => {
      cart.length = 0;
      showCart()
-     document.querySelector('#cart-section').classList.add('hidden') 
-     document.querySelector('#menu-screen').classList.remove('hidden')
+     showMenuScreen
+     hideRecieveOrderScreen
+     hideReceiptScreen
      
     
     
