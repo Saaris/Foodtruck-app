@@ -1,6 +1,7 @@
 const cartItem = document.getElementById("cart-section")
 const cartItemsElement = document.querySelector("#cart-items")
 export const cart = []
+export let totalPrice = 0
 
 export const showCart = () => {
     cartItem.classList.remove("hidden")
@@ -9,9 +10,8 @@ export const showCart = () => {
 
     const chosenItems = []
 
-    let totalPrice = 0
-
-
+     totalPrice = 0
+     //här läggs alla valda maträtter/dricka i cart   
     cart.forEach((item) => {
         if (chosenItems.includes(item.name)) 
 
@@ -38,7 +38,7 @@ export const showCart = () => {
         
         namePriceContainer.appendChild(itemNameElement)
         namePriceContainer.appendChild(priceElement)
-    
+            //antal av varje
         const quantityContainer = document.createElement('div')
         quantityContainer.classList.add('quantity-container')
 
@@ -59,14 +59,13 @@ export const showCart = () => {
         
         itemElement.appendChild(namePriceContainer)
         itemElement.appendChild(quantityContainer)
-        
 
-       
+       //eventlyssnare på plusbutton
         plusButton.addEventListener('click', () => {
             cart.push({...item})
             showCart()
         })
-
+        //eventlyssnare på minusbutton
         minusButton.addEventListener('click', () => {
             
             const itemIndex = cart.findIndex(cartItem => cartItem.name === item.name);
@@ -79,15 +78,15 @@ export const showCart = () => {
         cartItemsElement.appendChild(itemElement)
 
     })
-    //uppdatera totalpriset
-    const totalPriceElement = document.getElementById("total-price");
+    //uppdaterar totalpriset
+    const totalPriceElement = document.getElementById("total-price-cart");
     if (!totalPriceElement) {
         const newTotalPriceElement = document.getElementById("total");
-        //newTotalPriceElement.id = "total-price";
-        //newTotalPriceElement.textContent = `${totalPrice} SEK`;
+        newTotalPriceElement.id = "total-price";
+        newTotalPriceElement.textContent = `${totalPrice} SEK`;
         cartItemsElement.appendChild(newTotalPriceElement);
     } else {
-     totalPriceElement.textContent = `Total: ${totalPrice} SEK`;
+     totalPriceElement.textContent = `${totalPrice} SEK`;
     }
     }
     
