@@ -41,6 +41,14 @@ const startOrder = async () => {
             receiptSections.forEach(section => {
                 section.innerText = latestOrder.order.id;
             })
+
+            
+                    const showTime = document.querySelectorAll('.order-time')
+                    showTime.forEach(section => {
+                    section.innerText = latestOrder.order.eta;
+
+                //order tiden här
+            })
             console.log('beställning skickad:', bodyToSend);
             cart.length = 0;
         } else {

@@ -547,6 +547,12 @@ img {
 
 }
 
+.reciept-section-box {
+    border: 2px solid hotpink;
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
 .total-section{
     background-color: lightgrey;
     width: 100%;
