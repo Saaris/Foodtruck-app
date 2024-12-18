@@ -39,13 +39,17 @@ const startOrder = async () => {
             console.log('id senaste ordern', latestOrder)
             const receiptSections = document.querySelectorAll('.order-id')
             receiptSections.forEach(section => {
-                section.innerText = latestOrder.order.id;
+                section.innerText = `#${latestOrder.order.id}`;
             })
 
-            
-                    const showTime = document.querySelectorAll('.order-time')
-                    showTime.forEach(section => {
-                    section.innerText = latestOrder.order.eta;
+                    const showOrderTime = document.querySelectorAll('.order-time')
+                    showOrderTime.forEach(section => {
+                    section.innerText = latestOrder.order.timestamp;
+
+                    const showOrderCooked = document.querySelectorAll('.order-cooked')
+                    showOrderCooked.forEach(section => {
+                        section.innerText = latestOrder.order.eta
+                    })
 
                 //order tiden här
             })
@@ -100,7 +104,7 @@ payButton.addEventListener('click', () => {
      cart.length = 0;
      showCart()
      showMenu()
-     resetCount()
+     //resetCount()
     
 console.log('tillbaka till meny')
 })
