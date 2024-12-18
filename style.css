@@ -495,7 +495,8 @@ h2 {
 .order-id {
     font-size: 14px;
     font-weight: normal;
-    padding: 0.3em;
+    padding: 0.5em;
+    margin: 0.5em;
 }
 img {
     width: 100%;

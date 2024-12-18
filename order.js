@@ -40,19 +40,22 @@ const startOrder = async () => {
             const receiptSections = document.querySelectorAll('.order-id')
             receiptSections.forEach(section => {
                 section.innerText = `#${latestOrder.order.id}`;
-            })
+            
 
-                    const showOrderTime = document.querySelectorAll('.order-time')
+                    const orderTimestamp = new Date(latestOrder.order.timestamp);
+                    const orderEta = new Date(latestOrder.order.eta);
+
+                    const timeDifference = orderEta - orderTimestamp; 
+                    const timeDifferenceInMinutes = Math.floor(timeDifference / 1000 / 60);
+
+                    const showOrderTime = document.querySelectorAll('.order-time');
                     showOrderTime.forEach(section => {
-                    section.innerText = latestOrder.order.timestamp;
-
-                    const showOrderCooked = document.querySelectorAll('.order-cooked')
-                    showOrderCooked.forEach(section => {
-                        section.innerText = latestOrder.order.eta
-                    })
-
-                //order tiden här
-            })
+                        section.innerText = `${timeDifferenceInMinutes} minuter`;
+                    });
+                    
+})
+                    
+            
             console.log('beställning skickad:', bodyToSend);
             cart.length = 0;
         } else {
