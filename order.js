@@ -10,12 +10,8 @@ orderButton.addEventListener('click', () => {
     console.log('showCart-screen körs')
     showCart()
     showCartScreen()
-    //console.log('showcart-screen körs')
-} 
     
-    
-);
-
+});
 
 const startOrder = async () => {
     console.log('startOrder')
@@ -75,13 +71,9 @@ payButton.addEventListener('click', () => {
 
     console.log("Ordern har startat!")
     recieveOrder()
-    //här lägger du i GET request functionen
+    
 });
 
-//Detta står i API:
-// curl -X 'GET' \
-//   'https://fdnzawlcf6.execute-api.eu-north-1.amazonaws.com/%27q7jz%27/orders' \
-//   -H 'accept: application/json'
 
 
  const recieveOrder = async () => {
@@ -97,17 +89,13 @@ payButton.addEventListener('click', () => {
     let data = await response.json();
     console.log(data);  
 }
-// orderElement.appendChild(showCart); 
- //recieveOrder()
-
-
 
  const backToMenu = document.getElementById('cart-button')
  backToMenu.addEventListener('click', () => {
      cart.length = 0;
      showCart()
      showMenu()
-     //resetCount()
+     
     
 console.log('tillbaka till meny')
 })

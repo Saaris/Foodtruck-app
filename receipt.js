@@ -1,6 +1,5 @@
 
-import {showCart } from "./cart.js";
-import { showReceipt, showMenu } from "./hide-show-functions.js"
+import { showReceipt } from "./hide-show-functions.js"
 import { tenantId, url, apiKey } from "./constants.js"
 
 const seeReceipt = document.getElementById('see-receipt-button')
@@ -18,7 +17,7 @@ seeReceipt.addEventListener('click', () => {
 
 const singleOrderReciept = async () => {
 
-    
+
     
     let response = await fetch(`${url}/receipts/${tenantId}/${orderId}`, {
         headers:  {

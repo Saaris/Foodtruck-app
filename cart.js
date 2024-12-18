@@ -7,10 +7,9 @@ export const showCart = () => {
     console.log('showcart körs')
     cartItemsElement.textContent = "";
 
-    
-
     const chosenItems = []
 
+    let totalPrice = 0
 
 
     cart.forEach((item) => {
@@ -20,17 +19,15 @@ export const showCart = () => {
             chosenItems.push(item.name)
         
         const itemElement = document.createElement("div")
-        const quantity = cart.filter(i => i.name === item.name).length; //i är antalet, inte samma som item
+        const quantity = cart.filter(i => i.name === item.name).length; 
         const totalItemPrice = (item.price * quantity)
-    
+
+        totalPrice += totalItemPrice;
 
         itemElement.classList.add('item')
 
         const itemNameElement = document.createElement("h4")
         itemNameElement.textContent = item.name.toUpperCase();
-        
-        //itemElement.appendChild(itemNameElement)
-
        
         const priceElement = document.createElement('span')
         priceElement.textContent = `..........................${totalItemPrice}SEK`
@@ -39,11 +36,9 @@ export const showCart = () => {
         const namePriceContainer = document.createElement('div')
         namePriceContainer.classList.add('name-price-container')
         
-        
         namePriceContainer.appendChild(itemNameElement)
         namePriceContainer.appendChild(priceElement)
     
-
         const quantityContainer = document.createElement('div')
         quantityContainer.classList.add('quantity-container')
 
@@ -76,18 +71,26 @@ export const showCart = () => {
             
             const itemIndex = cart.findIndex(cartItem => cartItem.name === item.name);
             if (itemIndex !== -1) {
-                cart.splice(itemIndex, 1); // Ta bort objektet på rätt index
-                showCart(); // Uppdatera cart
+                cart.splice(itemIndex, 1); 
+                showCart(); 
             }
         })
 
         cartItemsElement.appendChild(itemElement)
 
     })
-    //uppdatera totalpriset 
-   
+    //uppdatera totalpriset
+    const totalPriceElement = document.getElementById("total-price");
+    if (!totalPriceElement) {
+        const newTotalPriceElement = document.getElementById("total");
+        //newTotalPriceElement.id = "total-price";
+        //newTotalPriceElement.textContent = `${totalPrice} SEK`;
+        cartItemsElement.appendChild(newTotalPriceElement);
+    } else {
+     totalPriceElement.textContent = `Total: ${totalPrice} SEK`;
+    }
     }
     
-
+    
   
 
