@@ -99,7 +99,7 @@ const recieveOrder = async () => {
   let data = await response.json();
   console.log(data);
 };
-
+let cart = [];
 const backToMenu = document.getElementById("cart-button");
 backToMenu.addEventListener("click", () => {
   cart.length = 0;

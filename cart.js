@@ -2,7 +2,7 @@
 
 const cartItem = document.getElementById("cart-section");
 const cartItemsElement = document.getElementById("cart-items");
-const cart = []; // lista med menu items (name, price, type osv.)
+export  const cart = []; // lista med menu items (name, price, type osv.)
 export let totalPrice = 0;
 
 export function getCart() {

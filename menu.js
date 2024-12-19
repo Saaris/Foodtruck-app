@@ -1,6 +1,8 @@
+import { getCart } from "./cart.js";
 import { apiKey, url } from "./constants.js"
 // import { cart } from "./cart.js";
 
+ let cart = getCart()
 
 const foodElement = document.querySelector('.food-section');
 
@@ -95,7 +97,6 @@ getMenu();
 
 
 function pickItem(item) {
-    
     cart.push(item);
     console.log(`Du klickade på: ${item.name}`);
     orderCount();
