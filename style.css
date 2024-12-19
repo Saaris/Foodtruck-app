@@ -14,7 +14,7 @@ body {
 }
 #menu-font {
     background-color: #489078;
-    padding: 0.5em;
+    padding: 1.5em;
 }  
 
 h1 {
@@ -603,16 +603,22 @@ img {
    
     h1 {
         font-size: 38px;
-        padding-left: 4.5em; 
+        padding: 0; 
     }
     .menu-box {
-        width:60%;
+        width:80%;
     }
     #sauce-section, #drink-section {
-        width: 60%
+        width: 80%
     }
     #menu-font {
-        padding: 2em
+        padding: 0;
+        margin-right: 6em;
+        margin-top: 1em;
+        
+    }
+    #cart-button {
+        margin-right: 2em;
     }
     .name-price-container{
         justify-content: center;
@@ -639,16 +645,30 @@ img {
     .order-time {
         font-size: 20px;
     }
-   
- } 
- @media (min-width: 760px) {
-
-    .menu-box {
-        width: 60%;
+    #receipt-box {
+        width: 70%;
+    }
+    #receipt-section-box {
+        margin-top: 4em;
+    }
+    #show-order-count {
+        position: static;
+        float: right;
     }
     
+   
+ } 
+ @media (min-width: 651px) {
+
+    .menu-box {
+        width: 70%;
+    }
+    #receipt-box {
+        width: 60%;
+    }
+
     #sauce-section, #drink-section {
-        width: 60%
+        width: 70%
     }
     #menu-font {
         padding: 2em
@@ -670,7 +690,7 @@ img {
     }
     .quantity-container{
         justify-content: center;
-        font-size: ;
+        
     }
     .total-pay {
         align-items: center;
@@ -685,6 +705,9 @@ img {
     }
     #first-neworder-button {
         width: 50%;
+    }
+    #second-neworder-button {
+        width: 60%;
     }
     .order-id{
         font-size: 18px;

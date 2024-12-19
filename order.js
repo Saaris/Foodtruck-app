@@ -1,5 +1,5 @@
 import { apiKey, url, tenantId } from "./constants.js";
-import { showCart, cart, totalPrice } from "./cart.js";
+import { showCart, getCart, totalPrice } from "./cart.js";
 import {
   showCartScreen,
   showMenu,
@@ -12,16 +12,24 @@ const orderButton = document.getElementById("order-button");
 
  //eventlyssnare till cart vyn
 orderButton.addEventListener("click", () => {
-  console.log("showCart-screen körs");
   showCart();
   showCartScreen();
 });
+
+
+export let latestId
+// export function getLatestId () {
+//   return latestId
+// }
 //POST request för att skicka order till API
 const startOrder = async () => {
   console.log("startOrder");
 
+  const cart = getCart()  // lista med menu items (object)
+  // skapa lista med bara id:n
+  const cartIds = cart.map(item => item.id)
   const bodyToSend = {
-    items: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17],
+    items: cartIds
   };
   try {
     const response = await fetch(`${url}/${tenantId}/orders`, {
@@ -35,7 +43,10 @@ const startOrder = async () => {
     });
     if (response.ok) {
       const latestOrder = await response.json();
-      console.log("id senaste ordern", latestOrder);
+      console.log("senaste ordern", latestOrder);
+
+      latestId = latestOrder.order.id
+
 
       //display order id
       const receiptSections = document.querySelectorAll(".order-id");
@@ -57,8 +68,8 @@ const startOrder = async () => {
       });
 
       console.log("beställning skickad:", bodyToSend);
-      cart.length = 0;
-    return latestOrderId  //returnera senste ordern
+    //return latestOrderId
+      //returnera senste ordern
 
     } else {
       console.log("fel vid beställning:", response.status);
@@ -71,10 +82,9 @@ const startOrder = async () => {
 const payButton = document.querySelector(".pay-button");
 
 payButton.addEventListener("click", () => {
+  const cart = getCart()
   startOrder();
   showRecieveOrder();
-  
-  console.log("Ordern har startat!");
   recieveOrder();
 });
 
@@ -105,8 +115,6 @@ firstNewOrder.addEventListener("click", () => {
   showCart();
   showMenu();
   resetCount();
-
-  console.log("tillbaka till meny från recieve-order vyn");
 });
 
 const secondNewOrder = document.getElementById("second-neworder-button");
@@ -115,6 +123,4 @@ secondNewOrder.addEventListener("click", () => {
   showCart();
   showMenu();
   resetCount();
-
-  console.log("tillbaka till meny från kvittovyn");
 });

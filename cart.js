@@ -1,95 +1,100 @@
-const cartItem = document.getElementById("cart-section")
-const cartItemsElement = document.querySelector("#cart-items")
-export const cart = []
-export let totalPrice = 0
+// import { getLatestId } from "./order"
+
+const cartItem = document.getElementById("cart-section");
+const cartItemsElement = document.getElementById("cart-items");
+const cart = []; // lista med menu items (name, price, type osv.)
+export let totalPrice = 0;
+
+export function getCart() {
+  return cart;
+}
 
 export const showCart = () => {
-    cartItem.classList.remove("hidden")
-    console.log('showcart körs')
-    cartItemsElement.textContent = "";
+  cartItem.classList.remove("hidden");
+  cartItemsElement.textContent = "";
 
-    const chosenItems = []
+  const chosenItems = [];
 
-     totalPrice = 0
-     //här läggs alla valda maträtter/dricka i cart   
-    cart.forEach((item) => {
-        if (chosenItems.includes(item.name)) 
+  totalPrice = 0;
+  //här läggs alla valda maträtter/dricka i cart
+  cart.forEach((item) => {
+    if (chosenItems.includes(item.name)) return;
+    chosenItems.push(item.name);
 
-            return
-            chosenItems.push(item.name)
-        
-        const itemElement = document.createElement("div")
-        const quantity = cart.filter(i => i.name === item.name).length; 
-        const totalItemPrice = (item.price * quantity)
+    const itemElement = document.createElement("div");
+    const quantity = cart.filter((i) => i.name === item.name).length;
+    const totalItemPrice = item.price * quantity;
 
-        totalPrice += totalItemPrice;
+    totalPrice += totalItemPrice;
 
-        itemElement.classList.add('item')
+    itemElement.classList.add("item");
 
-        const itemNameElement = document.createElement("h4")
-        itemNameElement.textContent = item.name.toUpperCase();
-       
-        const priceElement = document.createElement('span')
-        priceElement.textContent = `..........................${totalItemPrice}SEK`
-        itemElement.appendChild(priceElement) 
-        
-        const namePriceContainer = document.createElement('div')
-        namePriceContainer.classList.add('name-price-container')
-        
-        namePriceContainer.appendChild(itemNameElement)
-        namePriceContainer.appendChild(priceElement)
-            //antal av varje
-        const quantityContainer = document.createElement('div')
-        quantityContainer.classList.add('quantity-container')
+    const itemNameElement = document.createElement("h4");
+    itemNameElement.textContent = item.name.toUpperCase();
 
-        const plusButton = document.createElement('button')
-        plusButton.textContent = '+'
-        plusButton.classList.add('plus-button')
-        
-        const minusButton = document.createElement('button')
-        minusButton.textContent = '-'
-        minusButton.classList.add('minus-button')
+    const priceElement = document.createElement("span");
+    priceElement.textContent = `..........................${totalItemPrice}SEK`;
+    itemElement.appendChild(priceElement);
 
-        const quantityElement = document.createElement('span')
-        quantityElement.textContent = quantity
+    const namePriceContainer = document.createElement("div");
+    namePriceContainer.classList.add("name-price-container");
 
-        quantityContainer.appendChild(minusButton)
-        quantityContainer.appendChild(quantityElement)
-        quantityContainer.appendChild(plusButton)
-        
-        itemElement.appendChild(namePriceContainer)
-        itemElement.appendChild(quantityContainer)
+    namePriceContainer.appendChild(itemNameElement);
+    namePriceContainer.appendChild(priceElement);
+    //antal av varje
+    const quantityContainer = document.createElement("div");
+    quantityContainer.classList.add("quantity-container");
 
-       //eventlyssnare på plusbutton
-        plusButton.addEventListener('click', () => {
-            cart.push({...item})
-            showCart()
-        })
-        //eventlyssnare på minusbutton
-        minusButton.addEventListener('click', () => {
-            
-            const itemIndex = cart.findIndex(cartItem => cartItem.name === item.name);
-            if (itemIndex !== -1) {
-                cart.splice(itemIndex, 1); 
-                showCart(); 
-            }
-        })
+    const plusButton = document.createElement("button");
+    plusButton.textContent = "+";
+    plusButton.classList.add("plus-button");
 
-        cartItemsElement.appendChild(itemElement)
+    const minusButton = document.createElement("button");
+    minusButton.textContent = "-";
+    minusButton.classList.add("minus-button");
 
-    })
-    //uppdaterar totalpriset
-    const totalPriceElement = document.getElementById("total-price-cart");
-    if (!totalPriceElement) {
-        const newTotalPriceElement = document.getElementById("total");
-        newTotalPriceElement.id = "total-price";
-        newTotalPriceElement.textContent = `${totalPrice} SEK`;
-        cartItemsElement.appendChild(newTotalPriceElement);
-    } else {
-     totalPriceElement.textContent = `${totalPrice} SEK`;
-    }
-    }
-    
-    
-  
+    const quantityElement = document.createElement("span");
+    quantityElement.textContent = quantity;
 
+    quantityContainer.appendChild(minusButton);
+    quantityContainer.appendChild(quantityElement);
+    quantityContainer.appendChild(plusButton);
+
+    itemElement.appendChild(namePriceContainer);
+    itemElement.appendChild(quantityContainer);
+
+    //eventlyssnare på plusbutton
+    plusButton.addEventListener("click", () => {
+      cart.push({ ...item });
+      showCart();
+    });
+    //eventlyssnare på minusbutton
+    minusButton.addEventListener("click", () => {
+      const itemIndex = cart.findIndex(
+        (cartItem) => cartItem.name === item.name
+      );
+      if (itemIndex !== -1) {
+        cart.splice(itemIndex, 1);
+        showCart();
+      }
+    });
+
+    cartItemsElement.appendChild(itemElement);
+  });
+  //uppdaterar totalpriset
+  const totalPriceElement = document.getElementById("total-price-cart");
+  if (!totalPriceElement) {
+    const newTotalPriceElement = document.getElementById("total");
+    newTotalPriceElement.id = "total-price";
+    newTotalPriceElement.textContent = `${totalPrice} SEK`;
+    cartItemsElement.appendChild(newTotalPriceElement);
+  } else {
+    totalPriceElement.textContent = `${totalPrice} SEK`;
+  }
+};
+//     const totalPriceReceipt= document.getElementById("total-price-receipt");
+//     totalPriceReceipt.id = "receipt-total"
+//     totalPriceReceipt.textContent = totalPrice
+
+//     const totalPriceContainer = document.getElementById("total-show-receipt")
+//      totalPriceContainer.appendChild(totalPriceReceipt);

@@ -4,3 +4,7 @@ export function resetCount() {
     orderButtonCount.textContent = ''; 
     orderButtonCount.style.visibility = "hidden"; 
 }
+export function emptyCartButton () {
+        if (itemCount = 0)
+            !startOrder 
+        }

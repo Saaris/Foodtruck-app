@@ -1,16 +1,19 @@
 
 import { showReceipt } from "./hide-show-functions.js"
 import { tenantId, url, apiKey } from "./constants.js"
+import { latestId } from "./order.js"
 
-latestId = latestOrderId
+
 
 //eventlyssnare visa kvitto + senaste ordern
 const seeReceipt = document.getElementById('see-receipt-button')
 seeReceipt.addEventListener('click', async () => {
     console.log('see button funkar')
-    const orderId = latestId
+    // const orderId = getLatestId()
+    console.log("visa kvitto:")
     showReceipt()
-    singleOrderReciept(orderId)  //få in orderId i denna funktion, som parameter
+    singleOrderReciept(latestId)           //få in orderId i denna funktion, som parameter
+    console.log(singleOrderReciept())  
    
 })
 // Här är GET request för single order som skall visas på kvitto
@@ -26,3 +29,6 @@ const singleOrderReciept = async (id) => {
     let data = await response.json();
     console.log(data);  
 }
+
+// const showSingleOrder = document.querySelector('#show-order-on-receipt')
+// showSingleOrder.textContent = orderId;

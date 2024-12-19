@@ -1,5 +1,5 @@
 import { apiKey, url } from "./constants.js"
-import { cart } from "./cart.js";
+// import { cart } from "./cart.js";
 
 
 const foodElement = document.querySelector('.food-section');
@@ -92,7 +92,10 @@ const getMenu = async () => {
 
 getMenu();
 
+
+
 function pickItem(item) {
+    
     cart.push(item);
     console.log(`Du klickade på: ${item.name}`);
     orderCount();
@@ -107,3 +110,5 @@ export function orderCount() {
         orderButtonCount.textContent = `${itemCount}`; 
     }
 }
+
+
