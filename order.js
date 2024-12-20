@@ -16,17 +16,13 @@ orderButton.addEventListener("click", () => {
   showCartScreen();
 });
 
-
 export let latestId
-// export function getLatestId () {
-//   return latestId
-// }
+
 //POST request för att skicka order till API
 const startOrder = async () => {
   console.log("startOrder");
 
   const cart = getCart()  // lista med menu items (object)
-  // skapa lista med bara id:n
   const cartIds = cart.map(item => item.id)
   const bodyToSend = {
     items: cartIds
@@ -46,7 +42,6 @@ const startOrder = async () => {
       console.log("senaste ordern", latestOrder);
 
       latestId = latestOrder.order.id
-
 
       //display order id
       const receiptSections = document.querySelectorAll(".order-id");
@@ -68,8 +63,7 @@ const startOrder = async () => {
       });
 
       console.log("beställning skickad:", bodyToSend);
-    //return latestOrderId
-      //returnera senste ordern
+    
 
     } else {
       console.log("fel vid beställning:", response.status);
@@ -87,7 +81,7 @@ payButton.addEventListener("click", () => {
   showRecieveOrder();
   recieveOrder();
 });
-
+//GET order request
 const recieveOrder = async () => {
   let response = await fetch(`${url}/${tenantId}/orders`, {
     headers: {

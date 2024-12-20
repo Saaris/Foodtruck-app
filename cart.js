@@ -1,5 +1,3 @@
-// import { getLatestId } from "./order"
-
 const cartItem = document.getElementById("cart-section");
 const cartItemsElement = document.getElementById("cart-items");
 export  const cart = []; // lista med menu items (name, price, type osv.)
@@ -45,10 +43,12 @@ export const showCart = () => {
     const quantityContainer = document.createElement("div");
     quantityContainer.classList.add("quantity-container");
 
+    //plus button för att lägga till mer
     const plusButton = document.createElement("button");
     plusButton.textContent = "+";
     plusButton.classList.add("plus-button");
 
+    //minus button för att ta bort
     const minusButton = document.createElement("button");
     minusButton.textContent = "-";
     minusButton.classList.add("minus-button");
@@ -92,9 +92,3 @@ export const showCart = () => {
     totalPriceElement.textContent = `${totalPrice} SEK`;
   }
 };
-//     const totalPriceReceipt= document.getElementById("total-price-receipt");
-//     totalPriceReceipt.id = "receipt-total"
-//     totalPriceReceipt.textContent = totalPrice
-
-//     const totalPriceContainer = document.getElementById("total-show-receipt")
-//      totalPriceContainer.appendChild(totalPriceReceipt);

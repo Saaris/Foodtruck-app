@@ -1,3 +1,4 @@
+//nollställ om man beställer igen
 export function resetCount() {
     
     const orderButtonCount = document.getElementById('show-order-count');

@@ -1,7 +1,7 @@
 import { getCart } from "./cart.js";
 import { apiKey, url } from "./constants.js"
-// import { cart } from "./cart.js";
 
+// här hämtar jag items från menyn i ett request
  let cart = getCart()
 
 const foodElement = document.querySelector('.food-section');
@@ -21,7 +21,7 @@ const getMenu = async () => {
     if (Array.isArray(items)) {
         items.forEach((item, index) => {
             
-            
+            //mat, dips och dricka varsin eventlyssnare för att de skall hamna i cart
             const menuButton = document.createElement('button');
             menuButton.id = "menu";
             menuButton.classList.add('menu-box');
@@ -94,8 +94,6 @@ const getMenu = async () => {
 
 getMenu();
 
-
-
 function pickItem(item) {
     cart.push(item);
     console.log(`Du klickade på: ${item.name}`);
@@ -104,6 +102,7 @@ function pickItem(item) {
     showOrderCount.style.visibility = "visible";
 }
 
+//visar antal i cart (röd cirkel)
 export function orderCount() {
     const orderButtonCount = document.getElementById('show-order-count');
     if (cart.length > 0) {
