@@ -4,9 +4,8 @@ import { tenantId, url, apiKey } from "./constants.js"
 import { latestId } from "./order.js"
 import { getCart } from "./cart.js"
 
+//Visar kvitto med senaste order med GET Request
 
-
-//eventlyssnare visa kvitto + senaste ordern
 const seeReceipt = document.getElementById('see-receipt-button')
 seeReceipt.addEventListener('click', async () => {
     console.log('see button funkar')
@@ -15,12 +14,12 @@ seeReceipt.addEventListener('click', async () => {
     
     if (!latestId) {
         console.log('Ingen giltig order ID finns!');
-        return;  // Om latestId är undefined eller tomt, avbryt funktionen
+        return;  
     }
     
     console.log("visa kvitto för orderId:", latestId);
     
-    showReceipt();  // Visa kvittot på sidan
+    showReceipt();  
     await singleOrderReciept(latestId); 
 
     // console.log("visa kvitto:")
@@ -30,7 +29,7 @@ seeReceipt.addEventListener('click', async () => {
     // console.log(singleOrderReciept())  
    
 })
-// Här är GET request för single order som skall visas på kvitto
+// Här är GET request
 const singleOrderReciept = async (id) => {
     if (!id) {
         console.log('Order ID är undefined eller tomt!');
@@ -68,8 +67,6 @@ const singleOrderReciept = async (id) => {
         const orderInReceipt = document.createElement('div');
         orderInReceipt.classList.add('order');
 
-
-        // Skapa en lista för att visa orderitems
         const itemsList = document.createElement('div');
         itemsList.classList.add('items-list');
 
@@ -98,7 +95,7 @@ const singleOrderReciept = async (id) => {
         
         const totalPrice = data.receipt.items.reduce((total, item) => total + item.price * item.quantity, 0);
         
-        const totalPriceOnReceipt = document.getElementById('receipt-total-price-section');
+        const totalPriceOnReceipt = document.createElement('p');
         totalPriceOnReceipt.classList.add('total-price');
         totalPriceOnReceipt.textContent = `${totalPrice} SEK`;
         orderInReceipt.appendChild(totalPriceOnReceipt);

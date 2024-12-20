@@ -599,7 +599,7 @@ img {
 }
 
 
- @media (min-width: 650px) {
+ /* @media (min-width: 650px) {
    
     h1 {
         font-size: 38px;
@@ -654,24 +654,43 @@ img {
     #show-order-count {
         position: static;
         float: right;
-    }
+    } */
     
    
- } 
+ 
  @media (min-width: 651px) {
 
     .menu-box {
-        width: 70%;
+        max-width: 60%;
     }
     #receipt-box {
         width: 60%;
     }
 
     #sauce-section, #drink-section {
-        width: 70%
+        max-width: 60%
     }
     #menu-font {
-        padding: 2em
+        padding: 1em;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-around;
+        
+        
+    }
+    #show-order-count{
+        position: relative;
+        font-size: 14px;
+        margin-bottom: 0.2em;
+        
+    }
+    .button-container {
+        width: 100px;
+        height: 100px;
+        display: flex;
+        padding: 0.5em;
+        gap: 0.2em;
+
     }
     h1 {
         text-align: center;
@@ -682,11 +701,14 @@ img {
     }
     .dip-sauce {
         font-size: 16px;
-        max-width: 240px;
+        
     }
     .drinks {
         font-size: 16px;
-        max-width: 240px;
+        
+    }
+    .ingredient{
+        font-size: 18px;
     }
     .quantity-container{
         justify-content: center;
@@ -717,6 +739,27 @@ img {
     }
     h4{
         font-size: 22px;
+    }
+    #order-button {
+        width: 70px;
+        height: 70px;
+
+    }
+    #show-order-count {
+        margin: 0;
+        font-size: 13px;
+    }
+    #cart-button {
+        margin-right: 2em;
+        width: 70px;
+        height: 70px;
+    }
+    div {
+        font-size: 20px;
+    }
+    .pay-button {
+        width: 100%;
+
     }
    
  }
