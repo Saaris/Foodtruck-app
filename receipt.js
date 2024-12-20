@@ -4,7 +4,7 @@ import { tenantId, url, apiKey } from "./constants.js"
 import { latestId } from "./order.js"
 import { getCart } from "./cart.js"
 
-//Visar kvitto med senaste order med GET Request
+//Visar kvitto med senaste order med GET Request, kopplat till se kvitto-button
 
 const seeReceipt = document.getElementById('see-receipt-button')
 seeReceipt.addEventListener('click', async () => {
@@ -21,15 +21,9 @@ seeReceipt.addEventListener('click', async () => {
     
     showReceipt();  
     await singleOrderReciept(latestId); 
-
-    // console.log("visa kvitto:")
-    // showReceipt()
-    // await singleOrderReciept(orderId);
-    // //singleOrderReciept()           
-    // console.log(singleOrderReciept())  
    
 })
-// Här är GET request
+// Här är GET request för enstaka order som skall visas på kvitto
 const singleOrderReciept = async (id) => {
     if (!id) {
         console.log('Order ID är undefined eller tomt!');
@@ -54,44 +48,42 @@ const singleOrderReciept = async (id) => {
         console.log("Kvitto-data:", data);  // Logga den hämtade datan
 
         if (!data || !data.receipt || !data.receipt.items) {
-            console.log('Ingen giltig orderdata mottogs från servern');
             return;
         }
-
-        
+         //lista på de items jag valt som skall visas på kvitto
+        const itemsList = document.createElement('div');
+        const orderInReceipt = document.createElement('div');
+        const totalPriceContainer = document.getElementById('total-section'); 
         const receiptContainer = document.getElementById('show-order-on-receipt'); 
         receiptContainer.innerHTML = '';
 
-        const totalPriceContainer = document.getElementById('total-section'); 
         totalPriceContainer.innerHTML = '';
-        
-        const orderInReceipt = document.createElement('div');
+            
         orderInReceipt.classList.add('order');
-
-        const itemsList = document.createElement('div');
+        
         itemsList.classList.add('items-list');
 
-        
+    
         data.receipt.items.forEach(item => {
             const orderedItems = document.createElement('div');
-            orderedItems.classList.add('item');
-
             const itemNamePrice = document.createElement('div');
+
+            orderedItems.classList.add('item');
             itemNamePrice.classList.add('item-name-price');
 
-            // Skapa och lägg till item namn, typ, pris och kvantitet
+            // Visar namn, pris och antal på kvitto
             const itemName = document.createElement('p');
+            const itemPrice = document.createElement('p');
+            const itemQuantity = document.createElement('p');
+
             itemName.textContent = `${item.name}.........................${item.price} SEK`; 
             itemNamePrice.appendChild(itemName);
-
-            const itemPrice = document.createElement('p');
-            // itemPrice.textContent = `${item.price} SEK`;
+            
             itemNamePrice.appendChild(itemPrice);
-
             orderedItems.appendChild(itemNamePrice);
 
-            const itemQuantity = document.createElement('p');
             itemQuantity.textContent = `${item.quantity} stycken`;
+            itemQuantity.classList.add('quantity')
             orderedItems.appendChild(itemQuantity);
 
             itemsList.appendChild(orderedItems);
@@ -99,16 +91,21 @@ const singleOrderReciept = async (id) => {
 
         orderInReceipt.appendChild(itemsList);
         
+        //visar totalpris på kvitto
         const totalPrice = data.receipt.items.reduce((total, item) => total + item.price * item.quantity, 0);
-        
         const totalPriceOnReceipt = document.createElement('p');
+        const momsText = document.createElement('p');
+
         totalPriceOnReceipt.classList.add('total-price');
-        totalPriceOnReceipt.textContent = `TOTALT:      ${totalPrice} SEK`;
+        totalPriceOnReceipt.textContent = `TOTALT    ${totalPrice} SEK`;
 
         totalPriceContainer.appendChild(totalPriceOnReceipt);
-
-       
         receiptContainer.appendChild(orderInReceipt);
+
+        
+        momsText.textContent = 'inkl 20% moms';
+        momsText.classList.add('moms')
+        totalPriceContainer.appendChild(momsText)
 
     } catch (error) {
         console.log('fel:', error);

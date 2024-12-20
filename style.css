@@ -273,16 +273,18 @@ div {
     height:auto;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    
 }
 
 .item {
     display: flex;
     flex-direction: column;
-    padding: 0.3;
+    padding: 0.5em;
     align-items: center;
     border-bottom: 1px dashed grey;
     justify-content: space-evenly;
-    width: 50%;
+    
 } 
 .item-name-price{
     display: flex;
@@ -290,10 +292,6 @@ div {
     justify-content: space-evenly;
     gap: 1em;
 
-}
-.item p {
-    font-size: 16px;
-    margin: 0;
 }
 
 .quantity-container {
@@ -442,10 +440,10 @@ div {
     border-radius: 6px;
     padding: 0.8em;
     font-weight: bold;
-    margin-top: 2em;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
     width: 90%;
     display: block;
-    margin: 0 auto;
     
 }
 
@@ -584,11 +582,13 @@ img {
 }
 .total-price {
     margin: 0;
-    padding: 1.5em;
+    padding: 0.5em;
     text-align: center;
     gap: 1em;
-    
 }
+.total-section p {
+    margin: 0;
+}  
 
 .receipt-total {
     font-weight: bold;
@@ -618,77 +618,52 @@ img {
     font-weight: bold;
     display: flex;
     justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     
 }
+.moms {
+    font-size: 14px;
+    
+}
+.quantity {
+    margin-right: 9em;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+}
+.button-div{
+        display: flex;
+        justify-content: center;
+        margin: 0.5em    
+}
 
- /* @media (min-width: 650px) {
-   
-    h1 {
-        font-size: 38px;
-        padding: 0; 
+ @media (min-width: 651px) {
+    #second-neworder-button {
+        width: 45%;
     }
-    .menu-box {
-        width:80%;
+
+    .item-name-price{
+        font-size: 18px;
     }
-    #sauce-section, #drink-section {
-        width: 80%
-    }
-    #menu-font {
-        padding: 0;
-        margin-right: 6em;
-        margin-top: 1em;
-        
-    }
-    #cart-button {
-        margin-right: 2em;
-    }
-    .name-price-container{
-        justify-content: center;
-    }
-    .quantity-container{
-        justify-content: center;
-    }
-    .total-pay {
-        align-items: center;
-    }
-    .total {
-        width: 50%;
-        display: block;
-    }
-    #see-receipt-button {
-        width: 50%;
-    }
-    #first-neworder-button {
-        width: 50%;
-    }
-    .order-id{
+    .quantity {
         font-size: 16px;
     }
-    .order-time {
-        font-size: 20px;
-    }
-    #receipt-box {
-        width: 70%;
-    }
-    #receipt-section-box {
-        margin-top: 4em;
-    }
-    #show-order-count {
-        position: static;
-        float: right;
-    } */
-    
-   
- 
- @media (min-width: 651px) {
-
     .menu-box {
         max-width: 60%;
     }
     #receipt-box {
-        width: 60%;
+        width: 40%;
     }
-
+    .moms {
+        font-size: 16px;
+    }
+    .button-div{
+        display: flex;
+        justify-content: center;
+        margin: 0.5em
+        
+    }
     #sauce-section, #drink-section {
         max-width: 60%
     }
@@ -704,19 +679,15 @@ img {
         position: static;
         font-size: 16px;
         margin: 0;
-        padding-top: 0.3em;
         width: 25px;
-        height: 25px;
         border-radius: 50%;
         
     }
     .button-container {
-        width: 8%;
-        height: 8%;
+        
         display: flex;
         padding: 0;
         gap: 0;
-
 
     }
     h1 {
@@ -725,6 +696,7 @@ img {
     }
     .name-price-container{
         justify-content: center;
+        width: 100%
     }
     .dip-sauce {
         font-size: 16px;
@@ -759,9 +731,7 @@ img {
     }
     #first-neworder-button {
         width: 50%;
-    }
-    #second-neworder-button {
-        width: 60%;
+        
     }
     .order-id{
         font-size: 18px;
@@ -771,11 +741,12 @@ img {
     }
     h4{
         font-size: 22px;
+        width: 200px;
+        text-align: start;
+        width: fit-content;
     }
     #order-button {
         width: 70px;
-        height: 70px;
-
     
     }
     #cart-button {
