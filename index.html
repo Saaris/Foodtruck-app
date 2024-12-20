@@ -46,6 +46,7 @@
 </section>
         <!-- varukorg-vyn -->
         <section id="cart-section" class="hidden">
+            <div class="cart-container">
             <button class="material-symbols-outlined" id="cart-button">shopping_bag</button>
             <div id="cart-items"></div>
             <div class="total-pay">
@@ -57,6 +58,7 @@
                 <button class="pay-button">TAKE MY MONEY!</button>
             </div>
             </div>
+        </div>
         </section>
             <!-- ta emot order-vyn -->
         <section id="recieve-order-section" class="hidden">
@@ -74,18 +76,12 @@
         <!-- kvittodelen -->
     <section id="receipt-section" class="hidden">
         <div class="reciept-section-box">
-        <div id="receipt-box">KVITTO
-        <div id="receipt-id-box">
-            <p id="order-id-again" class="order-id"></p>
+        <div id="receipt-box">
+            <h2>KVITTO</h2>
+            
+        <p id="order-id-again" class="order-id"></p>
             <p id="show-order-on-receipt">order här</p>
-        </div>  
-        <div class="total-section">
-            <div class="total-show-receipt">
-                <div class="receipt-totalprice-section">
-                <button class="receipt-total">TOTALT<span id="total-price-receipt">SEK</span></button>
-                <p class="receipt-moms">inkl 20% moms</p>
-                </div>
-            </div>
+        <div id="total-section"></div>
         </div>
         </div>
         <button id="second-neworder-button">GÖR EN NY BESTÄLLNING</button>

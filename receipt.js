@@ -60,9 +60,10 @@ const singleOrderReciept = async (id) => {
 
         
         const receiptContainer = document.getElementById('show-order-on-receipt'); 
-
         receiptContainer.innerHTML = '';
 
+        const totalPriceContainer = document.getElementById('total-section'); 
+        totalPriceContainer.innerHTML = '';
         
         const orderInReceipt = document.createElement('div');
         orderInReceipt.classList.add('order');
@@ -75,14 +76,19 @@ const singleOrderReciept = async (id) => {
             const orderedItems = document.createElement('div');
             orderedItems.classList.add('item');
 
+            const itemNamePrice = document.createElement('div');
+            itemNamePrice.classList.add('item-name-price');
+
             // Skapa och lägg till item namn, typ, pris och kvantitet
             const itemName = document.createElement('p');
-            itemName.textContent = `${item.name}`; 
-            orderedItems.appendChild(itemName);
+            itemName.textContent = `${item.name}.........................${item.price} SEK`; 
+            itemNamePrice.appendChild(itemName);
 
             const itemPrice = document.createElement('p');
-            itemPrice.textContent = `${item.price} SEK`;
-            orderedItems.appendChild(itemPrice);
+            // itemPrice.textContent = `${item.price} SEK`;
+            itemNamePrice.appendChild(itemPrice);
+
+            orderedItems.appendChild(itemNamePrice);
 
             const itemQuantity = document.createElement('p');
             itemQuantity.textContent = `${item.quantity} stycken`;
@@ -97,8 +103,9 @@ const singleOrderReciept = async (id) => {
         
         const totalPriceOnReceipt = document.createElement('p');
         totalPriceOnReceipt.classList.add('total-price');
-        totalPriceOnReceipt.textContent = `${totalPrice} SEK`;
-        orderInReceipt.appendChild(totalPriceOnReceipt);
+        totalPriceOnReceipt.textContent = `TOTALT:      ${totalPrice} SEK`;
+
+        totalPriceContainer.appendChild(totalPriceOnReceipt);
 
        
         receiptContainer.appendChild(orderInReceipt);

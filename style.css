@@ -279,9 +279,21 @@ div {
     display: flex;
     flex-direction: column;
     padding: 0.3;
-    align-items: center ;
+    align-items: center;
     border-bottom: 1px dashed grey;
-    
+    justify-content: space-evenly;
+    width: 50%;
+} 
+.item-name-price{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 1em;
+
+}
+.item p {
+    font-size: 16px;
+    margin: 0;
 }
 
 .quantity-container {
@@ -319,7 +331,7 @@ div {
     font-weight: bold;
     border-radius: 6px;
     margin-left: 1em;
-    margin-top: 0.5em;
+    margin-top: 2.5em;
     font-size: 18px;
     display: flex;
     flex-direction: column;
@@ -485,6 +497,7 @@ div {
 
 h2 {
     text-align: center;
+    margin-bottom: 0;
 }
 
 .order-id {
@@ -492,6 +505,8 @@ h2 {
     font-weight: normal;
     padding: 0.5em;
     margin: 0.5em;
+    text-align: center;
+    margin-top: 0;
 }
 
 img {
@@ -567,6 +582,13 @@ img {
     margin: 0.2em;
     font-size: 18px;  
 }
+.total-price {
+    margin: 0;
+    padding: 1.5em;
+    text-align: center;
+    gap: 1em;
+    
+}
 
 .receipt-total {
     font-weight: bold;
@@ -588,16 +610,16 @@ img {
     justify-content: space-between;
 }
 
-.total-section{
+#total-section{
     font-family: "Fira Sans", sans-serif;
     background-color: lightgrey;
     font-size: 20px;
     color: black;
-    align-items: center;
-    border-radius: 6px;
     font-weight: bold;
+    display: flex;
+    justify-content: center;
+    
 }
-
 
  /* @media (min-width: 650px) {
    
@@ -679,17 +701,22 @@ img {
         
     }
     #show-order-count{
-        position: relative;
-        font-size: 14px;
-        margin-bottom: 0.2em;
+        position: static;
+        font-size: 16px;
+        margin: 0;
+        padding-top: 0.3em;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
         
     }
     .button-container {
-        width: 100px;
-        height: 100px;
+        width: 8%;
+        height: 8%;
         display: flex;
-        padding: 0.5em;
-        gap: 0.2em;
+        padding: 0;
+        gap: 0;
+
 
     }
     h1 {
@@ -718,9 +745,14 @@ img {
         align-items: center;
     }
     .total {
-        width: 25%;
+        width: 227px;
+        height: ;
         display: block;
         font-size: 22px;
+        margin-left: 1.5em;
+    }
+    #total-price-cart {
+        margin: 0.2em;
     }
     #see-receipt-button {
         width: 50%;
@@ -744,13 +776,10 @@ img {
         width: 70px;
         height: 70px;
 
-    }
-    #show-order-count {
-        margin: 0;
-        font-size: 13px;
+    
     }
     #cart-button {
-        margin-right: 2em;
+        margin-right: 3em;
         width: 70px;
         height: 70px;
     }
