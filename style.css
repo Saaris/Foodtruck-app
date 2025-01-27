@@ -347,7 +347,28 @@ div {
     width: 100%;
     font-size: 20px; 
     font-weight: bold;
+    display: flex;
+    align-items: flex-end;
+    height: 50px;
+}
+
+.show-price p {
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    margin: 0;
+
+}
+.dots {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 32px;
+    font-weight: bold;
     display: block;
+    margin-bottom: 2px;
 }
 
 .moms {

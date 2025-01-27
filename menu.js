@@ -26,10 +26,21 @@ const getMenu = async () => {
             menuButton.id = "menu";
             menuButton.classList.add('menu-box');
 
-            const price = document.createElement('p');
-            price.id = "city";
-            price.classList.add('show-price');
-            price.innerText = `${item.name}.....................${item.price} SEK`;
+            const foodContainer = document.createElement('div');
+            foodContainer.id = "city";
+            foodContainer.classList.add('show-price');
+
+            const dishContainer = document.createElement('p');
+            dishContainer.innerText = item.name;
+
+            const priceContainer = document.createElement('p');
+            priceContainer.innerText = `${item.price} SEK`;
+
+            const dotsContainer = document.createElement('div');
+            dotsContainer.classList.add('dots');
+            dotsContainer.style.borderBottom = "2px dotted white";
+
+            foodContainer.append (dishContainer, dotsContainer, priceContainer);
 
             menuButton.addEventListener('click', () => {
                 pickItem(item);
@@ -43,7 +54,7 @@ const getMenu = async () => {
                 foodIngredient.classList.add('ingredient');
                 foodIngredient.innerText = item.ingredients.join(', ');
                
-                menuButton.appendChild(price);
+                menuButton.appendChild(foodContainer);
                 menuButton.appendChild(foodIngredient);
 
                 foodElement.appendChild(menuButton)
