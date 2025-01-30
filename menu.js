@@ -34,11 +34,11 @@ const getMenu = async () => {
             dishContainer.innerText = item.name;
 
             const priceContainer = document.createElement('p');
-            priceContainer.innerText = `${item.price} SEK`;
+            priceContainer.innerText = `${item.price}SEK`;
 
             const dotsContainer = document.createElement('div');
             dotsContainer.classList.add('dots');
-            dotsContainer.style.borderBottom = "2px dotted white";
+            dotsContainer.style.borderBottom = "3px dotted white";
 
             foodContainer.append (dishContainer, dotsContainer, priceContainer);
 
@@ -63,19 +63,37 @@ const getMenu = async () => {
             
             else if (item.type === 'dip') {
 
-                const saucePrice = document.getElementById('sauce-price');
-                saucePrice.classList.add('show-sauce-price');
-                saucePrice.innerText = `DIPSÅS..............................${item.price} SEK`;
+                const sauceBox = document.getElementById('sauce-box');
+            //fick göra en if sats då jag hela tiden fick 6 st saucesBox
+
+                if (!sauceBox.hasChildNodes()) {
+                    
+                    const sauceHeader = document.createElement('p');
+                    sauceHeader.innerText = "DIPSÅS";
+                    sauceHeader.classList.add('sauce-header');
+            
+                    const saucePrice = document.createElement('p');
+                    saucePrice.innerText = `${item.price}SEK`;
+                    saucePrice.classList.add('sauce-price');
+            
+                    const sauceDots = document.createElement('div');
+                    sauceDots.classList.add('dots');
+                    sauceDots.style.borderBottom = "3px dotted white";
+            
+                    // Lägg till dessa element i sauceBox
+                    sauceBox.append(sauceHeader, sauceDots, saucePrice);
+                }
 
                 const SaucesContainer = document.getElementById('saucesContainer')
+                
                 const sauce = document.createElement('p');
                 sauce.innerText = item.name; 
-                sauce.classList.add('dip-sauce')
+                sauce.classList.add('dip-sauce');
                 
                 sauce.addEventListener('click', () => {
                     pickItem(item);
                 })
-                SaucesContainer.appendChild(sauce, saucePrice);
+                SaucesContainer.appendChild(sauce);
                 
             }
             

@@ -369,6 +369,9 @@ div {
     font-weight: bold;
     display: block;
     margin-bottom: 2px;
+    margin-left: 0.2em;
+    margin-right: 0.2em;
+
 }
 
 .moms {
@@ -417,6 +420,25 @@ div {
     padding: 0.3em;
     margin: 0;
     text-transform: uppercase;
+}
+.sauces-b {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    /* justify-content: flex-start; */
+    padding: 0.3em;
+    margin: 0;
+    text-transform: uppercase;
+    height: 50px;
+    margin-left: 0.4em;
+    margin-right: 0.3em;
+}
+.sauce-header{
+    margin: 0;
+   
+}
+.sauce-price{
+    margin: 0;
 }
 
 .show-sauce-price {
