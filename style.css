@@ -449,6 +449,24 @@ div {
     margin: 0;
 }
 
+.drinks-b {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    /* justify-content: flex-start; */
+    padding: 0.3em;
+    margin: 0;
+    text-transform: uppercase;
+    height: 50px;
+    margin-left: 0.4em;
+    margin-right: 0.3em;
+}
+.drink-header{
+    margin: 0;
+}
+.drink-price{
+    margin: 0;
+}
 .show-drink-price {
     font-size: 20px;
     font-weight: bold;

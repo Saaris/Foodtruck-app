@@ -67,6 +67,7 @@ export const showCart = () => {
     plusButton.addEventListener("click", () => {
       cart.push({ ...item });
       showCart();
+      
     });
     //eventlyssnare på minusbutton
     minusButton.addEventListener("click", () => {

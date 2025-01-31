@@ -97,11 +97,28 @@ const getMenu = async () => {
                 
             }
             
-            else if (item.type === 'drink') {
+            else if (item.type === 'drink'){
 
-                const drinkPrice = document.getElementById('drinks-price');
-                drinkPrice.classList.add('show-drink-price');
-                drinkPrice.innerText = `DRICKA..............................${item.price} SEK`;
+                const drinkBox = document.getElementById('drink-box');
+
+                // lägga in en if sats för att inte få 6 st drinkBox
+                if (!drinkBox.hasChildNodes()) {
+
+                const drinkHeader = document.createElement('p');
+                drinkHeader.innerText = "DRICKA";
+                drinkHeader.classList.add('drink-header');
+            
+                const drinkPrice = document.createElement('p');
+                drinkPrice.innerText = `${item.price}SEK`;
+                drinkPrice.classList.add('drink-price');
+            
+                const drinkDots = document.createElement('div');
+                drinkDots.classList.add('dots');
+                drinkDots.style.borderBottom = "3px dotted white";
+            
+                    // Lägg till dessa element i sauceBox
+                    drinkBox.append(drinkHeader, drinkDots, drinkPrice);
+                }
                 
                 const drinksContainer = document.getElementById('drinksContainer')
                 const drink = document.createElement('p');
@@ -112,7 +129,7 @@ const getMenu = async () => {
                     pickItem(item);
                 })
              
-                drinksContainer.appendChild(drink, drinkPrice)
+                drinksContainer.appendChild(drink)
             }
         });
         
