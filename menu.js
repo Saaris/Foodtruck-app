@@ -150,7 +150,7 @@ function pickItem(item) {
 
 //visar antal i cart (röd cirkel)
 export function orderCount() {
-    const orderButtonCount = document.getElementById('show-order-count');
+    let orderButtonCount = document.getElementById('show-order-count');
     if (cart.length > 0) {
         const itemCount = cart.length;
         orderButtonCount.textContent = `${itemCount}`; 

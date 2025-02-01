@@ -1,3 +1,5 @@
+import { orderCount } from "./menu.js";
+
 const cartItem = document.getElementById("cart-section");
 const cartItemsElement = document.getElementById("cart-items");
 export  const cart = []; // lista med menu items (name, price, type osv.)
@@ -77,6 +79,7 @@ export const showCart = () => {
       if (itemIndex !== -1) {
         cart.splice(itemIndex, 1);
         showCart();
+        orderCount();
       }
     });
 
