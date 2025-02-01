@@ -32,15 +32,18 @@ export const showCart = () => {
     const itemNameElement = document.createElement("h4");
     itemNameElement.textContent = item.name.toUpperCase();
 
+    const dotsElement = document.createElement("p");
+    dotsElement.classList.add("dot");
+    dotsElement.style.borderBottom = "3px dotted black";
+
     const priceElement = document.createElement("span");
-    priceElement.textContent = `..........................${totalItemPrice}SEK`;
-    itemElement.appendChild(priceElement);
+    priceElement.textContent = `${totalItemPrice}SEK`;
+    // itemElement.appendChild(priceElement);
 
     const namePriceContainer = document.createElement("div");
     namePriceContainer.classList.add("name-price-container");
 
-    namePriceContainer.appendChild(itemNameElement);
-    namePriceContainer.appendChild(priceElement);
+    namePriceContainer.append(itemNameElement, dotsElement, priceElement);
     //antal av varje
     const quantityContainer = document.createElement("div");
     quantityContainer.classList.add("quantity-container");

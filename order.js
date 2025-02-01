@@ -106,15 +106,17 @@ backToMenu.addEventListener("click", () => {
 const firstNewOrder = document.getElementById("first-neworder-button");
 firstNewOrder.addEventListener("click", () => {
   cart.length = 0;
+  resetCount();
   showCart();
   showMenu();
-  resetCount();
+  
 });
 
 const secondNewOrder = document.getElementById("second-neworder-button");
 secondNewOrder.addEventListener("click", () => {
   cart.length = 0;
+  resetCount();
   showCart();
   showMenu();
-  resetCount();
+  
 });

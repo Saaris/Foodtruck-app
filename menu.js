@@ -151,9 +151,13 @@ function pickItem(item) {
 //visar antal i cart (röd cirkel)
 export function orderCount() {
     let orderButtonCount = document.getElementById('show-order-count');
+    
     if (cart.length > 0) {
         const itemCount = cart.length;
         orderButtonCount.textContent = `${itemCount}`; 
+    }
+    else {
+        orderButtonCount.textContent = '0'; // Visa 0 om inga varor
     }
 }
 
