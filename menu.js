@@ -34,7 +34,8 @@ const getMenu = async () => {
             dishContainer.innerText = item.name;
 
             const priceContainer = document.createElement('p');
-            priceContainer.innerText = `${item.price}SEK`;
+            priceContainer.classList.add('price-in-menu');
+            priceContainer.innerText = `${item.price} SEK`;
 
             const dotsContainer = document.createElement('div');
             dotsContainer.classList.add('dots');
@@ -73,7 +74,7 @@ const getMenu = async () => {
                     sauceHeader.classList.add('sauce-header');
             
                     const saucePrice = document.createElement('p');
-                    saucePrice.innerText = `${item.price}SEK`;
+                    saucePrice.innerText = `${item.price} SEK`;
                     saucePrice.classList.add('sauce-price');
             
                     const sauceDots = document.createElement('div');
@@ -109,7 +110,7 @@ const getMenu = async () => {
                 drinkHeader.classList.add('drink-header');
             
                 const drinkPrice = document.createElement('p');
-                drinkPrice.innerText = `${item.price}SEK`;
+                drinkPrice.innerText = `${item.price} SEK`;
                 drinkPrice.classList.add('drink-price');
             
                 const drinkDots = document.createElement('div');

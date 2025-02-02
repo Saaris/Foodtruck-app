@@ -5,8 +5,6 @@ import {
   showMenu,
   showRecieveOrder,
 } from "./hide-show-functions.js";
-// import { resetCount } from "./order-in-cart.js";
-
 
 const orderButton = document.getElementById("order-button");
 
@@ -20,7 +18,6 @@ export let latestId
 
 //POST request för att skicka order till API
 const startOrder = async () => {
-  console.log("startOrder");
 
   const cart = getCart()  // lista med menu items (object)
   const cartIds = cart.map(item => item.id)
@@ -39,7 +36,6 @@ const startOrder = async () => {
     });
     if (response.ok) {
       const latestOrder = await response.json();
-      console.log("senaste ordern", latestOrder);
 
       latestId = latestOrder.order.id
 
@@ -104,7 +100,6 @@ backToMenu.addEventListener("click", () => {
 
 const firstNewOrder = document.getElementById("first-neworder-button");
 firstNewOrder.addEventListener("click", () => {
-  // cart.length = 0;
   resetCart();
   showCart();
   showMenu();
@@ -113,7 +108,6 @@ firstNewOrder.addEventListener("click", () => {
 
 const secondNewOrder = document.getElementById("second-neworder-button");
 secondNewOrder.addEventListener("click", () => {
-  // cart.length = 0;
   resetCart();
   showCart();
   showMenu();

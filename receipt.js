@@ -68,7 +68,7 @@ const singleOrderReciept = async (id) => {
             const orderedItems = document.createElement('div');
             const itemNamePrice = document.createElement('div');
 
-            orderedItems.classList.add('item');
+            orderedItems.classList.add('receipt-item');
             itemNamePrice.classList.add('item-name-price');
 
             // Visar namn, pris och antal på kvitto

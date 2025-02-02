@@ -45,7 +45,8 @@ export const showCart = () => {
     dotsElement.style.borderBottom = "3px dotted black";
 
     const priceElement = document.createElement("span");
-    priceElement.textContent = `${totalItemPrice}SEK`;
+    priceElement.classList.add("price-in-cart");
+    priceElement.textContent = `${totalItemPrice} SEK`;
     // itemElement.appendChild(priceElement);
 
     const namePriceContainer = document.createElement("div");
