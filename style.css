@@ -78,19 +78,19 @@ h1 {
     cursor: pointer;
 
 } 
-#show-order-count {
+.red-circle {
     font-size: 12px;
     border-radius: 50%;
     width: 20px;
     height: 20px;
     background-color: rgb(188, 46, 46);
-    right: 10px;
+    right: 5px;
     top: 10px;
     color: white;
     margin-left: 0.2em;
     position: absolute;
-    opacity: 0.9;
-    visibility: hidden;
+    opacity: 0.7;
+    /* visibility: hidden; */
     text-align: center;
     padding-top: 0.2em;
 }
@@ -101,7 +101,7 @@ h1 {
     width: 60px;
     height: 60px;
     border-radius: 50%; 
-    margin: 0.3em;
+    margin: 0;
     border: rgb(205, 202, 202);
     float: right;
     font-size: 36px;
@@ -285,6 +285,7 @@ div {
     border-bottom: 1px dashed grey;
     justify-content: space-evenly;
     background-color: rgb(217, 215, 215);
+    border-radius: 2px;
     
 } 
 .item-name-price{
@@ -711,13 +712,16 @@ img {
         margin: 0.5em    
 }
 
- @media (min-width: 651px) {
+ @media (min-width: 650px) {
     #second-neworder-button {
         width: 45%;
     }
 
     .item-name-price{
         font-size: 18px;
+    }
+    .item { 
+        width: 50%;
     }
     .quantity {
         font-size: 16px;
@@ -823,7 +827,7 @@ img {
     
     }
     #cart-button {
-        margin-right: 3em;
+        /* margin-right: 3em; */
         width: 70px;
         height: 70px;
     }
@@ -834,7 +838,6 @@ img {
         width: 100%;
 
     }
-   
  }
 .hidden {
     display: none;

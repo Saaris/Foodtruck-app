@@ -144,7 +144,7 @@ function pickItem(item) {
     cart.push(item);
     console.log(`Du klickade på: ${item.name}`);
     orderCount();
-    let showOrderCount = document.getElementById("show-order-count");
+    let showOrderCount = document.getElementById('show-order-count');
     showOrderCount.style.visibility = "visible";
 }
 

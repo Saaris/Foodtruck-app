@@ -72,6 +72,7 @@ export const showCart = () => {
     plusButton.addEventListener("click", () => {
       cart.push({ ...item });
       showCart();
+      orderCount();
       
     });
     //eventlyssnare på minusbutton
@@ -98,4 +99,6 @@ export const showCart = () => {
   } else {
     totalPriceElement.textContent = `${totalPrice} SEK`;
   }
+  console.log(cart);
 };
+
