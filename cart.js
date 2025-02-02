@@ -2,8 +2,16 @@ import { orderCount } from "./menu.js";
 
 const cartItem = document.getElementById("cart-section");
 const cartItemsElement = document.getElementById("cart-items");
-export  const cart = []; // lista med menu items (name, price, type osv.)
+export  let cart = []; // lista med menu items (name, price, type osv.)
 export let totalPrice = 0;
+
+export function resetCart() {
+  cart = []; 
+  const orderButtonCount = document.getElementById('show-order-count');
+  orderButtonCount.textContent = 0;
+  orderButtonCount.style.visibility = "hidden";
+
+}
 
 export function getCart() {
   return cart;

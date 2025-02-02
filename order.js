@@ -1,11 +1,11 @@
 import { apiKey, url, tenantId } from "./constants.js";
-import { showCart, getCart, totalPrice } from "./cart.js";
+import { showCart, getCart, resetCart } from "./cart.js";
 import {
   showCartScreen,
   showMenu,
   showRecieveOrder,
 } from "./hide-show-functions.js";
-import { resetCount } from "./order-in-cart.js";
+// import { resetCount } from "./order-in-cart.js";
 
 
 const orderButton = document.getElementById("order-button");
@@ -93,10 +93,9 @@ const recieveOrder = async () => {
   let data = await response.json();
   console.log(data);
 };
-let cart = [];
+
 const backToMenu = document.getElementById("cart-button");
 backToMenu.addEventListener("click", () => {
-  cart.length = 0;
   showCart();
   showMenu();
 
@@ -105,8 +104,8 @@ backToMenu.addEventListener("click", () => {
 
 const firstNewOrder = document.getElementById("first-neworder-button");
 firstNewOrder.addEventListener("click", () => {
-  cart.length = 0;
-  resetCount();
+  // cart.length = 0;
+  resetCart();
   showCart();
   showMenu();
   
@@ -114,8 +113,8 @@ firstNewOrder.addEventListener("click", () => {
 
 const secondNewOrder = document.getElementById("second-neworder-button");
 secondNewOrder.addEventListener("click", () => {
-  cart.length = 0;
-  resetCount();
+  // cart.length = 0;
+  resetCart();
   showCart();
   showMenu();
   

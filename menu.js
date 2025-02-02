@@ -141,6 +141,7 @@ const getMenu = async () => {
 getMenu();
 
 function pickItem(item) {
+    cart = getCart();
     cart.push(item);
     console.log(`Du klickade på: ${item.name}`);
     orderCount();
